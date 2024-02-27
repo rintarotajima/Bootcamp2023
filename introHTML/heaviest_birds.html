@@ -10,38 +10,85 @@
 <body>
     <h1>世界一重い鳥一覧</h1>
     <table>
-        <tr>
-            <th>Animal</th>
-            <th>Average mass[kg]</th>
-            <th>Maximum mass[kg]</th>
-            <th>Flighted</th>
-        </tr>
-        <tr>
-            <td>Ostrich</td>
-            <td>104</td>
-            <td>156</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td>Somali Ostrich</td>
-            <td>90</td>
-            <td>130</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td>Southern cassowary</td>
-            <td>45</td>
-            <td>85</td>
-            <td>No</td>
-        </tr>
+        <thead>
+            <tr>
+                <th>Animal</th>
+                <th>Average mass[kg]</th>
+                <th>Maximum mass[kg]</th>
+                <th>Flighted</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ostrich</td>
+                <td>104</td>
+                <td>156</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>Somali Ostrich</td>
+                <td>90</td>
+                <td>130</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>Southern cassowary</td>
+                <td>45</td>
+                <td>85</td>
+                <td>No</td>
+            </tr>
 
-        <tr>
-            <td>Wild tuckey</td>
-            <td>13.5</td>
-            <td>39</td>
-            <td>Yes</td>
-        </tr>
+            <tr>
+                <td>Wild tuckey</td>
+                <td>13.5</td>
+                <td>39</td>
+                <td>Yes</td>
+            </tr>
+        </tbody>
     </table>
+
+    <h2>V2</h2>
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2">Animal</th>
+                <th colspan="2">Average mass</th>
+                <th rowspan="2">Flighted</th>
+            </tr>
+            <tr>
+                <th>kg</th>
+                <th>lb</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ostrich</td>
+                <td>104</td>
+                <td>230</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>Somali Ostrich</td>
+                <td>90</td>
+                <td>200</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>Southern cassowary</td>
+                <td>45</td>
+                <td>99</td>
+                <td>No</td>
+            </tr>
+
+            <tr>
+                <td>Wild tuckey</td>
+                <td>13.5</td>
+                <td>29.8</td>
+                <td>Yes</td>
+            </tr>
+        </tbody>
+    </table>
+
 
 </body>
 
