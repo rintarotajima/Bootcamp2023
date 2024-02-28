@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form demo</title>
+</head>
+
+<body>
+    <h1>Form demo</h1>
+
+    <form action="/tacos">
+        <p>
+            <label for="username">ユーザ名：</label>
+            <input id="username" type="text" placeholder="ユーザ名" name="username">
+        </p>
+
+        <button>送信2</button>
+        <p>
+            <label for="password">パスワード：</label>
+            <input id="password" type="password" name="password">
+        </p>
+        <p>
+            <label for="color">好きな色：</label>
+            <input id="color" type="color" name="color">
+        </p>
+        <p>
+            <label for="number">数値：</label>
+            <input id="nubmer" type="number" name="number">
+        </p>
+        <button>送信!!!</button>
+        <input type="submit" value="送信!!!" name="submit">
+    </form>
+
+    <hr>
+
+    <h2>ハイジャック検索</h2>
+    <h3>Reddit検索</h3>
+    <form action="https://www.reddit.com/search/">
+        <input type="text" name="q">
+        <button>Reddit検索</button>
+    </form>
+
+    <h3>Google検索</h3>
+    <form action="https://www.google.com/search">
+        <input type="text" name="q">
+        <button>Google検索</button>
+    </form>
+
+    <h3>Youtube検索</h3>
+    <form action="https://www.youtube.com/results">
+        <input type="text" name="search_query">
+        <button>Youtube検索</button>
+    </form>
+
+    <h2>チェックボックス</h2>
+    <form action="/birds">
+        <p>
+            <label for="agree">利用規約に同意します</label>
+            <input type="checkbox" name="agree_tos" id="agree">
+        </p>
+        <p>
+            <label for="xs">XS</label>
+            <input type="radio" name="size" id="xs" value="xs">
+            <label for="s">S</label>
+            <input type="radio" name="size" id="s" value="s">
+            <label for="m">M</label>
+            <input type="radio" name="size" id="m" value="m">
+        </p>
+        <p>
+            <label for="meal">食事を選択してください</label>
+            <select name="meal" id="meal">
+                <option value="salad">サラダ</option>
+                <option value="fish">魚</option>
+                <option value="meat" selected>肉</option>
+            </select>
+            <!-- /# -->
+        </p>
+        <p>
+            <label for="okashi">お菓子の量</label>
+            <input type="range" id="okashi" min="1" max="1000" name="okashi_level" step="10">
+        </p>
+
+        <p>
+            <label for="comments">その他コメント：</label>
+            <br>
+            <textarea id="comments" rows="10" cols="20" placeholder="コメントを入力してください"></textarea>
+            <!-- /# -->
+        </p>
+
+        <button>送信</button>
+    </form>
+</body>
+
+</html>
