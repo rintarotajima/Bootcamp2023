@@ -88,7 +88,20 @@
             <textarea id="comments" rows="10" cols="20" placeholder="コメントを入力してください"></textarea>
             <!-- /# -->
         </p>
-
+        <button>送信</button>
+    </form>
+    <h2>バリデーションデモ</h2>
+    <form action="/dummy">
+        <label for="first">名前</label>
+        <input type="text" id="first" name="first" required>
+        <p>
+            <label for="username">ユーザ名</label>
+            <input type="text" id="username" name="username" minlength="5" maxlength="20">
+        </p>
+        <p>
+            <input type="email" required>
+            <input type="url" required>
+        </p>
         <button>送信</button>
     </form>
 </body>
