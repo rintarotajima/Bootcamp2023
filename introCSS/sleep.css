@@ -12,8 +12,20 @@ button {
 p {
     color: olive;
     background: orange;
+    line-height: 2;
 }
 
-body {
-    background-color: #062b27;
+
+h2 {
+    text-align: center;
+    font-family: bold;
+    /* wavyは線の形を波線にする */
+    text-decoration: underline wavy;
+    letter-spacing: 10px;
+    font-size: 100px;
+    font-family: Futura, Helvetica,sans-serif;
+}
+
+a {
+    text-decoration: none;
 }
