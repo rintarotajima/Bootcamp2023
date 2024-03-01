@@ -1,0 +1,27 @@
+/* * {
+    background-color: cyan;
+} */
+
+body {
+    background-color: #f1faee;
+}
+
+button {
+    font-size: 30px;
+    background-color: #a8dadc;
+}
+
+h1, h2 {
+    color: #1d3537;
+}
+
+#signup {
+    color: #fefae0;
+    background-color: #ffb703;
+}
+
+.tag {
+    color: #bde0fe;
+    background-color: #023047;
+    font-size: 14px;
+}
