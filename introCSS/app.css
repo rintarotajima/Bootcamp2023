@@ -11,7 +11,8 @@ button {
     background-color: #a8dadc;
 }
 
-h1, h2 {
+h1,
+h2 {
     color: #1d3537;
 }
 
@@ -20,8 +21,20 @@ h1, h2 {
     background-color: #ffb703;
 }
 
+span {
+    color: #0077b6;
+}
+
 .tag {
-    color: #bde0fe;
+    color: #dc2f02;
     background-color: #023047;
     font-size: 14px;
+}
+
+.post a {
+    color: #0077b6;
+}
+
+footer a {
+    color: #e4c1f9;
 }
