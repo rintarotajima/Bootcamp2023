@@ -1,0 +1,11 @@
+.about .heading {
+    color: orange;
+}
+
+.about h2.heading {
+    color: pink;
+}
+
+section.about .heading {
+    color: aqua;
+}

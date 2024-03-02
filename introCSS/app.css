@@ -2,6 +2,7 @@
     background-color: cyan;
 } */
 
+
 body {
     background-color: #f1faee;
 }
@@ -33,8 +34,71 @@ span {
 
 .post a {
     color: #0077b6;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 footer a {
     color: #e4c1f9;
 }
+
+/* 隣接セレクタ― */
+input+button {
+    background-color: pink;
+}
+
+h2+button {
+    font-size: 16px;
+    background-color: pink;
+}
+
+/* 直下セレクタ― */
+footer>a {
+    color: black;
+}
+
+/* 属性セレクタ― */
+input[type="password"] {
+    color: greenyellow;
+}
+
+a[href*="google"] {
+    color: aqua;
+}
+
+/* 疑似クラス */
+.post a:hover {
+    text-decoration: underline;
+}
+
+.post button:active {
+    background-color: #e0ffff;
+}
+
+.post:nth-of-type(2n) {
+    background-color: #919a8e;
+}
+
+h2::first-letter {
+    font-size: 60px;
+}
+
+p::first-line {
+    color: peru;
+}
+
+p::selection {
+    background-color: #dc2f02;
+}
+
+.post button:hover {
+    background-color: #800000;
+    color: #fff;
+}
+
+
+button:hover {
+    background-color: olive;
+    font-size: 10px;
+}
+
