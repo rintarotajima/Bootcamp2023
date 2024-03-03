@@ -1,4 +1,32 @@
 div {
-    width: 500px;
-    height: 100px;
+    width: 200px;
+    height: auto;
+    background-color: #fae1dd;
+}
+
+h1 {
+    background-color: pink;
+}
+
+#one {
+    background-color: #2a9d8f;
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+    box-sizing: border-box;
+}
+
+#two {
+    background-color: #99582a;
+    border-width: 3px;
+    border-color: #09202d;
+    border-style: dashed;
+    box-sizing: border-box;
+}
+
+#three {
+    background-color: #a7c957;
+    border: 10px solid green;
+    box-sizing: border-box;
+    border-radius: 10%;
 }
