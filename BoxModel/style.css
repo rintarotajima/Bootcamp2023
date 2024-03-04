@@ -6,6 +6,9 @@ div {
 
 h1 {
     background-color: pink;
+    text-align: center;
+    width: 300px;
+    padding: 10px 0;
 }
 
 #one {
@@ -29,4 +32,8 @@ h1 {
     border: 10px solid green;
     box-sizing: border-box;
     border-radius: 10%;
+}
+
+button {
+    padding: 10px 20px 30px 40px;
 }
