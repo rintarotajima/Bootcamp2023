@@ -41,3 +41,31 @@ button {
     color: #ef476f;
 }
 
+#percentage {
+    background-color: #c9184a;
+    width: 400px;
+    height: 800px;
+}
+
+#percentage div {
+    background-color: #ffca3a;
+    width: 70%;
+    height: 20%;
+
+}
+
+#rems h1 {
+    font-size: 0.5rem;
+    color: black;
+    background-color: #fcf6bd;
+}
+
+#rems h2 {
+    font-size: 1.2rem;
+    color: #9a8c98;
+    background-color: ef476f;
+}
+
+#rems ul {
+    font-size: 0.5rem;
+}
