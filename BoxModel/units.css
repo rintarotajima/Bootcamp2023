@@ -15,3 +15,29 @@ h1 {
     border: 2px solid black;
     line-height: 120%;
 }
+
+article {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-left: 1em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+p {
+    font-size: 0.5em;
+}
+
+button {
+    font-size: 1em;
+    padding: 0 1em;
+    border-radius: 0.5em;
+    background-color: #023047;
+    color: #ef476f;
+}
+
