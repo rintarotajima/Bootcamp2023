@@ -2,4 +2,38 @@ div {
     width: 100px;
     height: 100px;
     background-color: black;
+    border: 2px blue solid;
+    display: inline-block;
+    margin: 10px;
+}
+
+.middle {
+    background-color: aqua;
+}
+
+#static .middle {
+    position: static;
+}
+
+
+#relative .middle {
+    position: relative;
+    top: 50px;
+    left: 50px;
+}
+
+#absolute {
+    position: relative;
+}
+
+#absolute .middle {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+#fixed .middle {
+    position: fixed;
+    top: 100px;
+    left: 100px;
 }
