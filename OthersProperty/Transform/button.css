@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+button {
+    padding: 1.2em;
+    border: 5px solid #90e0ef;
+    background-color: #0077b6;
+}
+
+button:hover {
+    padding: 1.2em;
+    border: 5px solid #ffbe0b;
+    background-color: #fcca46;
+    transform: translateY(10px);
+}
