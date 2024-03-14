@@ -16,7 +16,10 @@ h1 {
     /* 初期値がrowで他にもrow-reverse,column,column-reverseがある */
     flex-direction: row;
     /* 初期値がflex-startで他にもflex-end,space-between,space-aroundがある */
-    justify-content: space-between;
+    justify-content: flex-start;
+    /* 初期値はno-wrapで他にもwrap,wrap-reverseなどがある */
+    flex-wrap: no-wrap;
+
 }
 
 #container div {
