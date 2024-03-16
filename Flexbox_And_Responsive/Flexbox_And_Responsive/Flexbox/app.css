@@ -45,10 +45,29 @@ main {
 main .sidebar {
     background-color: purple;
     flex: 1 2 300px;
+    border: 2px solid black
+}
+
+main .maincontent {
+    background-color: cyan;
+    flex: 2 1 600px;
+}
+
+/* main {
+    width: 80%;
+    margin: 0 auto;
+    border: 5px solid black;
+    height: 500px;
+    display: flex;
+}
+
+main .sidebar {
+    background-color: purple;
+    flex: 1 2 300px;
     border: 2px solid black;
 }
 
 main .maincontent {
     background-color: cyan;
     flex: 2 1 800px;
-}
+} */

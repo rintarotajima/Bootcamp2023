@@ -16,13 +16,21 @@ h1 {
     /* 初期値がrowで他にもrow-reverse,column,column-reverseがある */
     flex-direction: row;
     /* 初期値がflex-startで他にもflex-end,space-between,space-aroundがある */
-    justify-content: flex-start;
+    justify-content: center;
     /* 初期値はno-wrapで他にもwrap,wrap-reverseなどがある */
-    flex-wrap: no-wrap;
-
+    flex-wrap: wrap;
+    /* align-itemsは交差軸方向の調整に用いる */
+    align-items: flex-start;
+    /* align-contentは交差軸のアイテム間または周囲の空間の配分を決める */
+    /* align-content: flex-end; */
 }
 
 #container div {
     width: 200px;
     height: 200px;
+}
+
+    /* align-selfは交差軸上でalign-itemsを上書きする */
+div:nth-of-type(5) {
+    align-self: center;
 }
