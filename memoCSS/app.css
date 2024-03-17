@@ -1,0 +1,21 @@
+.img1 {
+    max-width: 100%;
+}
+
+.img2 {
+    width: 100%;
+}
+
+img {
+    width: 900px;
+}
+
+.img3 {
+    width: 900px;
+    max-width: 100%;
+}
+
+.img4 {
+    width: 100%;
+    max-width: 900px;
+}
