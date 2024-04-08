@@ -21,17 +21,47 @@ console.log("Javascriptの冒険へ行くぞ");
 //     console.log("今日はプロ野球の試合がある");
 // }
 
-const num = 102;
+// const num = 102;
 
-if (num <= 100) {
-    if (num >= 50) {
-        console.log("ほげ");
-    }
+// if (num <= 100) {
+//     if (num >= 50) {
+//         console.log("ほげ");
+//     }
+// } else {
+//     if (num < 103) {
+//         if (num % 2 === 0) {
+//             console.log("正解!");
+//         }
+//     }
+// }
+
+const playerScore = 120;
+const playTime = 60;
+const levelCleared = true;
+
+if (playerScore >= 100 && playTime >= 60 && levelCleared) {
+    console.log("特別なアイテムを獲得しました");
 } else {
-    if (num < 103) {
-        if (num % 2 === 0) {
-            console.log("正解!");
-        }
-    }
+    console.log("条件を満たしていません");
+}
+
+const playedScore = 80;
+const playingTime = 30;
+const levelClear = false;
+
+if (playedScore >= 100 || playingTime <= 60 || levelClear) {
+    console.log("特別なアイテムを獲得しました");
+} else {
+    console.log("条件を満たしていません");
+}
+
+// ユーザの年齢と住所
+const userAge = 17;
+const userCountry = "Japan";
+
+if (!(userAge >= 18 && userCountry === "Japan")) {
+    console.log("特定のメッセージを表示します");
+} else {
+    console.log("条件を満たしていません");
 }
 
