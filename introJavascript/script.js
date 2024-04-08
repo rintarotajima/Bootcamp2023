@@ -13,11 +13,25 @@ console.log("Javascriptの冒険へ行くぞ");
 //     console.log("あなたは年齢制限によって映画をご覧になれません");
 // }
 
-const dayOfWeek = prompt("曜日を英語で入力してください").toLowerCase();
+// const dayOfWeek = prompt("曜日を英語で入力してください").toLowerCase();
 
-if (dayOfWeek === 'monday') {
-    console.log("今日はプロ野球の試合がない");
+// if (dayOfWeek === 'monday') {
+//     console.log("今日はプロ野球の試合がない");
+// } else {
+//     console.log("今日はプロ野球の試合がある");
+// }
+
+const num = 102;
+
+if (num <= 100) {
+    if (num >= 50) {
+        console.log("ほげ");
+    }
 } else {
-    console.log("今日はプロ野球の試合がある");
+    if (num < 103) {
+        if (num % 2 === 0) {
+            console.log("正解!");
+        }
+    }
 }
 
