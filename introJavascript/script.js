@@ -65,3 +65,24 @@ if (!(userAge >= 18 && userCountry === "Japan")) {
     console.log("条件を満たしていません");
 }
 
+
+//　ユーザからの入力を取得
+let userInput = prompt("1から4の数字を入力してください");
+
+switch(userInput) {
+    case "1":
+        alert("あなたは1を選択しました");
+        break;
+    case "2":
+        alert("あなたは2を選択しました");
+        break;
+    case "3":
+        alert("あなたは3を選択しました");
+        break;
+    case "4":
+        alert("あなたは4を選択しました");
+        break;
+    default:
+        alert("無効な数字です，1から4の数字を入力してください");
+}
+
