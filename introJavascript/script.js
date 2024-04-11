@@ -94,11 +94,11 @@
 //     console.log(i);
 // }
 
-let count = 0;
-while ( count < 10) {
-    count++;
-    console.log(count);
-}
+// let count = 0;
+// while ( count < 10) {
+//     count++;
+//     console.log(count);
+// }
 
 // const SECRET = 'superchat';
 
@@ -108,12 +108,29 @@ while ( count < 10) {
 // }
 // console.log("正解,おめでとう!");
 
-let input = prompt("何か入力してください");
-while(true) {
-    input = prompt(input);
-    if (input === "quit") {
-        break;
-    }
+let maximum = parseInt(prompt("何か数字を入力してください:"));
+while (!maximum) {
+    maximum = parseInt(prompt("エラーが起きました.有効な数字を入力してください:"));
 }
 
+const targetNum = Math.floor(Math.random() * maximum) + 1;
 
+let guess = (prompt("数字を入力してください:"))
+let count = 1;
+
+while (parseInt(guess) !== targetNum) {
+    if (guess === 'q') {
+        break;
+    }
+    count++;
+    if (guess > targetNum) {
+        guess = (prompt("入力値は期待値より大きいです"));
+    } else {
+        guess = (prompt("入力値は期待値より小さいです"));
+    }
+}
+if (guess === 'q') {
+    console.log("お疲れさまでした");
+} else {
+    console.log(`${count}回目で正解できた`);
+}
