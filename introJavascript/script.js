@@ -108,29 +108,50 @@
 // }
 // console.log("正解,おめでとう!");
 
-let maximum = parseInt(prompt("何か数字を入力してください:"));
-while (!maximum) {
-    maximum = parseInt(prompt("エラーが起きました.有効な数字を入力してください:"));
+// let maximum = parseInt(prompt("何か数字を入力してください:"));
+// while (!maximum) {
+//     maximum = parseInt(prompt("エラーが起きました.有効な数字を入力してください:"));
+// }
+
+// const targetNum = Math.floor(Math.random() * maximum) + 1;
+
+// let guess = (prompt("数字を入力してください:"))
+// let count = 1;
+
+// while (parseInt(guess) !== targetNum) {
+//     if (guess === 'q') {
+//         break;
+//     }
+//     count++;
+//     if (guess > targetNum) {
+//         guess = (prompt("入力値は期待値より大きいです"));
+//     } else {
+//         guess = (prompt("入力値は期待値より小さいです"));
+//     }
+// }
+// if (guess === 'q') {
+//     console.log("お疲れさまでした");
+// } else {
+//     console.log(`${count}回目で正解できた`);
+// // }
+
+const numbers = [1,2,3,4,5,6,7,8,9];
+
+for (const number of numbers) {
+    console.log(number);
 }
 
-const targetNum = Math.floor(Math.random() * maximum) + 1;
-
-let guess = (prompt("数字を入力してください:"))
-let count = 1;
-
-while (parseInt(guess) !== targetNum) {
-    if (guess === 'q') {
-        break;
-    }
-    count++;
-    if (guess > targetNum) {
-        guess = (prompt("入力値は期待値より大きいです"));
-    } else {
-        guess = (prompt("入力値は期待値より小さいです"));
-    }
+const testScores = {
+    ken: 80,
+    yuki: 67,
+    taro: 89,
+    ryota: 90,
+    yuma: 72,
+    chiaki: 83,
+    kota: 97,
+    saeko: 81,
 }
-if (guess === 'q') {
-    console.log("お疲れさまでした");
-} else {
-    console.log(`${count}回目で正解できた`);
+
+for (const student of Object.keys(testScores)) {
+    console.log(`${student}は${testScores[student]}点です`);
 }
