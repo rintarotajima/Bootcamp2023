@@ -100,10 +100,20 @@ while ( count < 10) {
     console.log(count);
 }
 
-const SECRET = 'superchat';
+// const SECRET = 'superchat';
 
-let guess = '';
-while ( guess !== SECRET ) {
-    guess = prompt("秘密のコードを入力してください");
+// let guess = '';
+// while ( guess !== SECRET ) {
+//     guess = prompt("秘密のコードを入力してください");
+// }
+// console.log("正解,おめでとう!");
+
+let input = prompt("何か入力してください");
+while(true) {
+    input = prompt(input);
+    if (input === "quit") {
+        break;
+    }
 }
-console.log("正解,おめでとう!");
+
+
