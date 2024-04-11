@@ -175,9 +175,11 @@ while (userInput !== "quit") {
     }
     else if (userInput === "delete") {
         let deleteTodo = parseInt(prompt("削除するインデックスを入力してください"));
-        if (deleteTodo >= 0 && deleteTodo <= todos.length) {
+        if (!Number.isNaN(deleteTodo)) {
            let removed = todos.splice(deleteTodo, 1);
             console.log(`${removed}を削除しました`);
+        } else {
+            console.log("有効な数字を入力してください");
         }
     }
     userInput = prompt("コマンドを入力してください(new, list, delete, quit)"); // ここでuserInputの値を更新
