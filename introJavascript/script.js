@@ -135,23 +135,52 @@
 //     console.log(`${count}回目で正解できた`);
 // // }
 
-const numbers = [1,2,3,4,5,6,7,8,9];
+// const numbers = [1,2,3,4,5,6,7,8,9];
 
-for (const number of numbers) {
-    console.log(number);
+// for (const number of numbers) {
+//     console.log(number);
+// }
+
+// const testScores = {
+//     ken: 80,
+//     yuki: 67,
+//     taro: 89,
+//     ryota: 90,
+//     yuma: 72,
+//     chiaki: 83,
+//     kota: 97,
+//     saeko: 81,
+// }
+
+// for (const student of Object.keys(testScores)) {
+//     console.log(`${student}は${testScores[student]}点です`);
+// }
+let userInput = prompt("コマンドを入力してください(new, list, delete, quit)");
+let todos = [];
+
+
+while (userInput !== "quit") {
+    
+    if (userInput === "new") {
+        let newTodo = prompt("新しいTodoを入力してください");
+        todos.push(newTodo);
+        console.log(`「${newTodo}」を追加しました`);
+    }
+    else if (userInput === "list") {
+        console.log("***********");
+        for (let i = 0; i < todos.length; i++) {
+            console.log(`${i}: ${todos[i]}`);
+        }
+        console.log("***********");
+    }
+    else if (userInput === "delete") {
+        let deleteTodo = parseInt(prompt("削除するインデックスを入力してください"));
+        if (deleteTodo >= 0 && deleteTodo <= todos.length) {
+           let removed = todos.splice(deleteTodo, 1);
+            console.log(`${removed}を削除しました`);
+        }
+    }
+    userInput = prompt("コマンドを入力してください(new, list, delete, quit)"); // ここでuserInputの値を更新
 }
 
-const testScores = {
-    ken: 80,
-    yuki: 67,
-    taro: 89,
-    ryota: 90,
-    yuma: 72,
-    chiaki: 83,
-    kota: 97,
-    saeko: 81,
-}
-
-for (const student of Object.keys(testScores)) {
-    console.log(`${student}は${testScores[student]}点です`);
-}
+console.log("アプリを終了しました");
