@@ -155,34 +155,56 @@
 // for (const student of Object.keys(testScores)) {
 //     console.log(`${student}は${testScores[student]}点です`);
 // }
-let userInput = prompt("コマンドを入力してください(new, list, delete, quit)");
-let todos = [];
+// let userInput = prompt("コマンドを入力してください(new, list, delete, quit)");
+// let todos = [];
 
 
-while (userInput !== "quit") {
+// while (userInput !== "quit") {
     
-    if (userInput === "new") {
-        let newTodo = prompt("新しいTodoを入力してください");
-        todos.push(newTodo);
-        console.log(`「${newTodo}」を追加しました`);
-    }
-    else if (userInput === "list") {
-        console.log("***********");
-        for (let i = 0; i < todos.length; i++) {
-            console.log(`${i}: ${todos[i]}`);
-        }
-        console.log("***********");
-    }
-    else if (userInput === "delete") {
-        let deleteTodo = parseInt(prompt("削除するインデックスを入力してください"));
-        if (!Number.isNaN(deleteTodo)) {
-           let removed = todos.splice(deleteTodo, 1);
-            console.log(`${removed}を削除しました`);
-        } else {
-            console.log("有効な数字を入力してください");
-        }
-    }
-    userInput = prompt("コマンドを入力してください(new, list, delete, quit)"); // ここでuserInputの値を更新
+//     if (userInput === "new") {
+//         let newTodo = prompt("新しいTodoを入力してください");
+//         todos.push(newTodo);
+//         console.log(`「${newTodo}」を追加しました`);
+//     }
+//     else if (userInput === "list") {
+//         console.log("***********");
+//         for (let i = 0; i < todos.length; i++) {
+//             console.log(`${i}: ${todos[i]}`);
+//         }
+//         console.log("***********");
+//     }
+//     else if (userInput === "delete") {
+//         let deleteTodo = parseInt(prompt("削除するインデックスを入力してください"));
+//         if (!Number.isNaN(deleteTodo)) {
+//            let removed = todos.splice(deleteTodo, 1);
+//             console.log(`${removed}を削除しました`);
+//         } else {
+//             console.log("有効な数字を入力してください");
+//         }
+//     }
+//     userInput = prompt("コマンドを入力してください(new, list, delete, quit)"); // ここでuserInputの値を更新
+// }
+
+// console.log("アプリを終了しました");
+
+let obj = {
+    a: 1,
+    b: 2,
+    c: 3,
+}
+for (let prop in obj) {
+    console.log(prop + ":" + obj[prop]);
 }
 
-console.log("アプリを終了しました");
+let arr = [1,2,3];
+
+for (let value of arr) {
+    console.log(value);
+}
+
+for (let i = 0; i < 10; i++) {
+    if (i === 5) {
+        break;
+    }
+    console.log(i);
+}
