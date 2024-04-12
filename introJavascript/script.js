@@ -208,3 +208,57 @@ for (let i = 0; i < 10; i++) {
     }
     console.log(i);
 }
+
+// 関数の作り方
+function printHeart() {
+    console.log('<3');
+}
+
+printHeart();
+
+function shout(message) {
+    console.log(`${message}`.toUpperCase());
+    console.log(`${message}`.toUpperCase());
+    console.log(`${message}`.toUpperCase());
+}
+
+shout("hello world");
+
+function isSameNumbers(num1, num2) {
+    if (num1 === num2) {
+        console.log("ゾロ目");
+    }
+    else {
+        console.log("ゾロ目じゃない");
+    }
+}
+
+isSameNumbers(1,1);
+isSameNumbers(2,2);
+isSameNumbers(3,4);
+
+
+function multiply(num1, num2) {
+    return num1 + num2;
+}
+
+console.log(multiply(1, 4));
+console.log(multiply(2, 10));
+
+function isShortsWeather(temperature) {
+    if (temperature > 25) {
+        return true;
+    } 
+    return false;
+}
+
+console.log(isShortsWeather(15));
+
+function lastElement(array){
+    if (array !== 0) {
+        return array[array.length-1]
+    } 
+    return null;
+}
+
+console.log(lastElement(["a","b"]));
