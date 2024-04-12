@@ -160,7 +160,7 @@
 
 
 // while (userInput !== "quit") {
-    
+
 //     if (userInput === "new") {
 //         let newTodo = prompt("新しいTodoを入力してください");
 //         todos.push(newTodo);
@@ -196,7 +196,7 @@ for (let prop in obj) {
     console.log(prop + ":" + obj[prop]);
 }
 
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 
 for (let value of arr) {
     console.log(value);
@@ -233,9 +233,9 @@ function isSameNumbers(num1, num2) {
     }
 }
 
-isSameNumbers(1,1);
-isSameNumbers(2,2);
-isSameNumbers(3,4);
+isSameNumbers(1, 1);
+isSameNumbers(2, 2);
+isSameNumbers(3, 4);
 
 
 function multiply(num1, num2) {
@@ -248,17 +248,46 @@ console.log(multiply(2, 10));
 function isShortsWeather(temperature) {
     if (temperature > 25) {
         return true;
-    } 
+    }
     return false;
 }
 
 console.log(isShortsWeather(15));
 
-function lastElement(array){
+function lastElement(array) {
     if (array !== 0) {
-        return array[array.length-1]
-    } 
+        return array[array.length - 1]
+    }
     return null;
 }
 
-console.log(lastElement(["a","b"]));
+console.log(lastElement(["a", "b"]));
+
+function capitalize(s) {
+    return s[0].toUpperCase() + s.slice(1);
+}
+
+console.log(capitalize("egg"));
+
+function sumArray(num) {
+    let sum = 0;
+    for (i = 0; i < num.length; i++) {
+        sum += num[i];
+    }
+    return sum;
+}
+
+console.log(sumArray([1, 2, 3]));
+
+function returnDay(num) {
+    const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    if (num >= 0 && num <= 7) {
+        return daysOfWeek[num - 1];
+    } else {
+        return null;
+    }
+}
+
+console.log(returnDay(1));
+console.log(returnDay(3));
+console.log(returnDay(5));
