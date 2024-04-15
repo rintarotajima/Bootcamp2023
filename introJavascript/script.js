@@ -339,3 +339,26 @@ const isTweetable = function (text) {
 }
 
 console.log(isTweetable('foo'));
+
+
+// 高階関数
+// コールバックとして実行される関数
+function hello() {
+  console.log("hello");
+}
+// コールバックを実行する関数
+function execute(callback) {
+  // コールバックを実行する
+  callback();
+}
+
+execute(hello);
+
+// コードの流れ
+/*355行目で「execute」関数を実行
+  その際の引数として，hello関数を渡す
+  350行目の「execute」関数が呼び出されて，引数のcallback変数にhello関数が渡る
+  352行目でcallback()を付けて関数を実行する
+  346行目のhello関数が呼ばれる
+  helloという文字列が出力される
+ */
