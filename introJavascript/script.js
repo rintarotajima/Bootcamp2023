@@ -318,3 +318,24 @@
 // 	console.log( a ); //200
 // }
 // func();
+
+// function funcScope() {
+//     let myFuncVar1 = 'myFuncVar1'; // これが関数スコープの変数です
+//     console.log(myFuncVar1);
+//   }
+  
+//   funcScope();
+//   console.log(myFuncVar1);
+
+// 関数式
+function isCanable(text) {
+  return text.length <= 140;
+} 
+
+console.log(isCanable('foo'));
+
+const isTweetable = function (text) {
+  return text.length <= 140;
+}
+
+console.log(isTweetable('foo'));
