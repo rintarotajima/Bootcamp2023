@@ -187,107 +187,117 @@
 
 // console.log("アプリを終了しました");
 
-let obj = {
-    a: 1,
-    b: 2,
-    c: 3,
-}
-for (let prop in obj) {
-    console.log(prop + ":" + obj[prop]);
-}
+// let obj = {
+//     a: 1,
+//     b: 2,
+//     c: 3,
+// }
+// for (let prop in obj) {
+//     console.log(prop + ":" + obj[prop]);
+// }
 
-let arr = [1, 2, 3];
+// let arr = [1, 2, 3];
 
-for (let value of arr) {
-    console.log(value);
-}
+// for (let value of arr) {
+//     console.log(value);
+// }
 
-for (let i = 0; i < 10; i++) {
-    if (i === 5) {
-        break;
+// for (let i = 0; i < 10; i++) {
+//     if (i === 5) {
+//         break;
+//     }
+//     console.log(i);
+// }
+
+// // 関数の作り方
+// function printHeart() {
+//     console.log('<3');
+// }
+
+// printHeart();
+
+// function shout(message) {
+//     console.log(`${message}`.toUpperCase());
+//     console.log(`${message}`.toUpperCase());
+//     console.log(`${message}`.toUpperCase());
+// }
+
+// shout("hello world");
+
+// function isSameNumbers(num1, num2) {
+//     if (num1 === num2) {
+//         console.log("ゾロ目");
+//     }
+//     else {
+//         console.log("ゾロ目じゃない");
+//     }
+// }
+
+// isSameNumbers(1, 1);
+// isSameNumbers(2, 2);
+// isSameNumbers(3, 4);
+
+
+// function multiply(num1, num2) {
+//     return num1 + num2;
+// }
+
+// console.log(multiply(1, 4));
+// console.log(multiply(2, 10));
+
+// function isShortsWeather(temperature) {
+//     if (temperature > 25) {
+//         return true;
+//     }
+//     return false;
+// }
+
+// console.log(isShortsWeather(15));
+
+// function lastElement(array) {
+//     if (array !== 0) {
+//         return array[array.length - 1]
+//     }
+//     return null;
+// }
+
+// console.log(lastElement(["a", "b"]));
+
+// function capitalize(s) {
+//     return s[0].toUpperCase() + s.slice(1);
+// }
+
+// console.log(capitalize("egg"));
+
+// function sumArray(num) {
+//     let sum = 0;
+//     for (i = 0; i < num.length; i++) {
+//         sum += num[i];
+//     }
+//     return sum;
+// }
+
+// console.log(sumArray([1, 2, 3]));
+
+// function returnDay(num) {
+//     const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+//     if (num >= 0 && num <= 7) {
+//         return daysOfWeek[num - 1];
+//     } else {
+//         return null;
+//     }
+// }
+
+// console.log(returnDay(1));
+// console.log(returnDay(3));
+// console.log(returnDay(5));
+
+
+const hen = {
+    name: 'Helen',
+    eggCount: 0,
+    layAnEgg: function () {
+        this.eggCount += 1;
+        return "EGG"
     }
-    console.log(i);
 }
-
-// 関数の作り方
-function printHeart() {
-    console.log('<3');
-}
-
-printHeart();
-
-function shout(message) {
-    console.log(`${message}`.toUpperCase());
-    console.log(`${message}`.toUpperCase());
-    console.log(`${message}`.toUpperCase());
-}
-
-shout("hello world");
-
-function isSameNumbers(num1, num2) {
-    if (num1 === num2) {
-        console.log("ゾロ目");
-    }
-    else {
-        console.log("ゾロ目じゃない");
-    }
-}
-
-isSameNumbers(1, 1);
-isSameNumbers(2, 2);
-isSameNumbers(3, 4);
-
-
-function multiply(num1, num2) {
-    return num1 + num2;
-}
-
-console.log(multiply(1, 4));
-console.log(multiply(2, 10));
-
-function isShortsWeather(temperature) {
-    if (temperature > 25) {
-        return true;
-    }
-    return false;
-}
-
-console.log(isShortsWeather(15));
-
-function lastElement(array) {
-    if (array !== 0) {
-        return array[array.length - 1]
-    }
-    return null;
-}
-
-console.log(lastElement(["a", "b"]));
-
-function capitalize(s) {
-    return s[0].toUpperCase() + s.slice(1);
-}
-
-console.log(capitalize("egg"));
-
-function sumArray(num) {
-    let sum = 0;
-    for (i = 0; i < num.length; i++) {
-        sum += num[i];
-    }
-    return sum;
-}
-
-console.log(sumArray([1, 2, 3]));
-
-function returnDay(num) {
-    const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-    if (num >= 0 && num <= 7) {
-        return daysOfWeek[num - 1];
-    } else {
-        return null;
-    }
-}
-
-console.log(returnDay(1));
-console.log(returnDay(3));
-console.log(returnDay(5));
