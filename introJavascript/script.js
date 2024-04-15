@@ -293,11 +293,28 @@
 // console.log(returnDay(5));
 
 
-const hen = {
-    name: 'Helen',
-    eggCount: 0,
-    layAnEgg: function () {
-        this.eggCount += 1;
-        return "EGG"
-    }
-}
+// const hen = {
+//     name: 'Helen',
+//     eggCount: 0,
+//     layAnEgg: function () {
+//         this.eggCount += 1;
+//         return "EGG"
+//     }
+// }
+
+// var a = 100;
+// function func() {
+//     var b = 100;
+//     c = 100;
+//     console.log(a,b,c);
+// }
+
+// function func(){
+// 	var a = 100;
+// 	if(true){
+// 		var a = 200;
+// 		console.log( a ); //200
+// 	}
+// 	console.log( a ); //200
+// }
+// func();
