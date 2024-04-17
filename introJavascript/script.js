@@ -323,14 +323,14 @@
 //     let myFuncVar1 = 'myFuncVar1'; // これが関数スコープの変数です
 //     console.log(myFuncVar1);
 //   }
-  
+
 //   funcScope();
 //   console.log(myFuncVar1);
 
 // 関数式
 function isCanable(text) {
   return text.length <= 140;
-} 
+}
 
 console.log(isCanable('foo'));
 
@@ -363,11 +363,49 @@ console.log(isTweetable('foo'));
   helloという文字列が出力される
  */
 
-  function execute() {
-    function hello() {
-      console.log("hello");
-    }
-    hello();
-  }
+// function execute() {
+//   function hello() {
+//     console.log("hello");
+//   }
+//   hello();
+// }
 
-  execute();
+// execute();
+
+// forEachメソッド 与えられた関数を，配列の各要素に対して一度ずつ実行する
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// print(numbers[0]);
+
+numbers.forEach(
+  function (element) {
+    console.log(element);
+  });
+
+
+const movies = [
+  {
+    title: 'Amadeus',
+    score: 99
+  },
+  {
+    title: 'Stand By Me',
+    score: 86
+  },
+  {
+    title: 'Parasite',
+    score: 95
+  },
+  {
+    title: 'Alien',
+    score: 75
+  }
+];
+
+movies.forEach(
+  function (movie) {
+    console.log(`${movie.title}-${movie.score}/100`)
+  }
+);
+
+
