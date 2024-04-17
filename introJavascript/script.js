@@ -409,3 +409,13 @@ movies.forEach(
 );
 
 
+//mapメソッド 与えられた関数を配列のすべての要素に対して呼び出し，新たな配列を生成する
+const doubles = numbers.map(function (num) {
+  return num * 2;
+})
+
+
+const titles = movies.map(function (movie) {
+  return `${movie.title}`;
+})
+
