@@ -419,3 +419,10 @@ const titles = movies.map(function (movie) {
   return `${movie.title}`;
 })
 
+
+// アロー関数式
+const greet = (String) => {
+  return `Hey ${String}!`;
+}
+
+greet("abc");
