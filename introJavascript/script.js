@@ -426,3 +426,18 @@ const greet = (String) => {
 }
 
 greet("abc");
+
+// アロー関数の暗黙的なreturn
+/* 関数本体が単一の式である場合に，自動的にその式を値返すことができる
+機能がある*/
+
+// 通常の関数
+function multiply(a,b) {
+  return a * b;
+}
+
+console.log(multiplay(5,5));
+
+// アロー関数　-暗黙的なreturn-
+const multiply = (a,b) => a * b
+
