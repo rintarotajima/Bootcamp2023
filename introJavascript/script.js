@@ -408,6 +408,18 @@ movies.forEach(
   }
 );
 
+// アロー関数のまとめ
+// const newMovies = movies.map(function (movie) {
+//   return `${movie.tile} - ${movie.score / 10}`;
+// })
+// const newMovies = movies.map ( (movie) => {
+//   return `${movie.title} ${movie.score}/10`;
+// })
+const newMovies = movies.map( movie => ( `${movie.title} ${movie.score}/10`));
+
+
+
+
 
 //mapメソッド 与えられた関数を配列のすべての要素に対して呼び出し，新たな配列を生成する
 const doubles = numbers.map(function (num) {
@@ -432,12 +444,12 @@ greet("abc");
 機能がある*/
 
 // 通常の関数
-function multiply(a,b) {
-  return a * b;
-}
+// function multiply(a,b) {
+//   return a * b;
+// }
 
-console.log(multiplay(5,5));
+// console.log(multiplay(5,5));
 
-// アロー関数　-暗黙的なreturn-
-const multiply = (a,b) => a * b
+// // アロー関数　-暗黙的なreturn-
+// const multiply = (a,b) => a * b
 
