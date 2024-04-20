@@ -453,3 +453,19 @@ greet("abc");
 // // アロー関数　-暗黙的なreturn-
 // const multiply = (a,b) => a * b
 
+
+
+// setTImeoutメソッド
+setTimeout(() => {
+  console.log("おはよう");
+},1000);
+
+
+//setInterValメソッド
+const id = setInterval(() => {
+  console.log(Math.random());
+},2000);
+
+// clearIntervalメソッド
+clearInterval();
+
