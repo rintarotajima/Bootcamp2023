@@ -328,17 +328,17 @@
 //   console.log(myFuncVar1);
 
 // 関数式
-function isCanable(text) {
-  return text.length <= 140;
-}
+// function isCanable(text) {
+//   return text.length <= 140;
+// }
 
-console.log(isCanable('foo'));
+// console.log(isCanable('foo'));
 
-const isTweetable = function (text) {
-  return text.length <= 140;
-}
+// const isTweetable = function (text) {
+//   return text.length <= 140;
+// }
 
-console.log(isTweetable('foo'));
+// console.log(isTweetable('foo'));
 
 
 // 高階関数
@@ -373,40 +373,40 @@ console.log(isTweetable('foo'));
 // execute();
 
 // forEachメソッド 与えられた関数を，配列の各要素に対して一度ずつ実行する
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 // print(numbers[0]);
 
-numbers.forEach(
-  function (element) {
-    console.log(element);
-  });
+// numbers.forEach(
+//   function (element) {
+//     console.log(element);
+//   });
 
 
-const movies = [
-  {
-    title: 'Amadeus',
-    score: 99
-  },
-  {
-    title: 'Stand By Me',
-    score: 86
-  },
-  {
-    title: 'Parasite',
-    score: 95
-  },
-  {
-    title: 'Alien',
-    score: 75
-  }
-];
+// const movies = [
+//   {
+//     title: 'Amadeus',
+//     score: 99
+//   },
+//   {
+//     title: 'Stand By Me',
+//     score: 86
+//   },
+//   {
+//     title: 'Parasite',
+//     score: 95
+//   },
+//   {
+//     title: 'Alien',
+//     score: 75
+//   }
+// ];
 
-movies.forEach(
-  function (movie) {
-    console.log(`${movie.title}-${movie.score}/100`)
-  }
-);
+// movies.forEach(
+//   function (movie) {
+//     console.log(`${movie.title}-${movie.score}/100`)
+//   }
+// );
 
 // アロー関数のまとめ
 // const newMovies = movies.map(function (movie) {
@@ -415,29 +415,29 @@ movies.forEach(
 // const newMovies = movies.map ( (movie) => {
 //   return `${movie.title} ${movie.score}/10`;
 // })
-const newMovies = movies.map( movie => ( `${movie.title} ${movie.score}/10`));
+// const newMovies = movies.map( movie => ( `${movie.title} ${movie.score}/10`));
 
 
 
 
 
-//mapメソッド 与えられた関数を配列のすべての要素に対して呼び出し，新たな配列を生成する
-const doubles = numbers.map(function (num) {
-  return num * 2;
-})
+// //mapメソッド 与えられた関数を配列のすべての要素に対して呼び出し，新たな配列を生成する
+// const doubles = numbers.map(function (num) {
+//   return num * 2;
+// })
 
 
-const titles = movies.map(function (movie) {
-  return `${movie.title}`;
-})
+// const titles = movies.map(function (movie) {
+//   return `${movie.title}`;
+// })
 
 
 // アロー関数式
-const greet = (String) => {
-  return `Hey ${String}!`;
-}
+// const greet = (String) => {
+//   return `Hey ${String}!`;
+// }
 
-greet("abc");
+// greet("abc");
 
 // アロー関数の暗黙的なreturn
 /* 関数本体が単一の式である場合に，自動的にその式を値返すことができる
@@ -456,16 +456,37 @@ greet("abc");
 
 
 // setTImeoutメソッド
-setTimeout(() => {
-  console.log("おはよう");
-},1000);
+// setTimeout(() => {
+//   console.log("おはよう");
+// },1000);
 
 
-//setInterValメソッド
-const id = setInterval(() => {
-  console.log(Math.random());
-},2000);
+// //setInterValメソッド
+// const id = setInterval(() => {
+//   console.log(Math.random());
+// },2000);
 
-// clearIntervalメソッド
-clearInterval();
+// // clearIntervalメソッド
+// clearInterval();
+
+
+// reduceメソッド 
+
+const prices = [1220, 2440, 3660, 4880, 5000];
+
+// let total = 0;
+// for (let price of prices) {
+//   total += price;
+// }
+// console.log(total);
+
+prices.reduce( (total, price) => total += price )
+
+// 配列の要素の最小値を当てるコード
+const minPrices = prices.reduce( (min, price) => {
+  if (min > price) {
+    return price; // minに入った値がpriceに入った値より大きい場合，最小値はpriceになるから
+  }
+  return min; // それ以外の時はminに入った値を返すと最小値になる
+})
 
