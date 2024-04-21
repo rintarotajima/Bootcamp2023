@@ -564,3 +564,17 @@ const merged = { ...obj1, ...obj2 }; // { a: 1, b: 2, c: 3 }
 const copy = { ...obj1 }; // { a: 1, b: 2 }
 
 // スプレッド構文を使うと，既存のオブジェクトから新しいオブジェクトを作成できたり，結合できたりする
+
+
+//　レスト構文：複数の要素を単一の配列にまとめる
+function sum1(...numbers) {
+  return numbers.reduce((a, b) => a + b, 0)
+}
+
+sum1(1, 2, 3); //6
+sum1(4, 5, 6, 7, 8); // 30
+
+// 配列の分割にも使える
+const [head, ...tail] = [1, 2, 3, 4, 5];
+console.log(head); // 1
+console.log(tail); // [2,3,4,5]
