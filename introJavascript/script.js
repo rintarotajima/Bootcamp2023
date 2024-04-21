@@ -541,8 +541,26 @@ displayInfo('Mike', undefined, 'Sydney'); // Name; Mike, Age: 25, City: Sydney
 // 関数呼び出しにおけるスプレッド構文
 const numbers = [1, 2, 3];
 const sum = (a, b, c) => a + b + c;
-console.log(sum.apply(null, numbers));
-console.log(sum(...numbers));
+console.log(sum.apply(null, numbers)); //6
+console.log(sum(...numbers)); //6
 
-// スプレッド構文を使うと配列の要素を個別の引数として関数に渡すことができる
+// スプレッド構文を使うと，配列の要素を個別の引数として関数に渡すことができる
 // 従来は，配列をそのまま関数に渡すと．1つの引数として扱われる
+
+
+// 配列リテラルにおけるスプレッド構文
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+
+const combined = [...arr1, ...arr2]; // [1, 2, 3, 4, 5, 6]
+const copied = [...arr1] // [1, 2, 3]
+// スプレッド構文を使うと，既存の配列から新しい配列を作成できたり，結合できたりする
+
+
+// オブジェクトにおけるスプレッド構文
+const obj1 = { a: 1, b: 2 };
+const obj2 = { c: 3 };
+const merged = { ...obj1, ...obj2 }; // { a: 1, b: 2, c: 3 }
+const copy = { ...obj1 }; // { a: 1, b: 2 }
+
+// スプレッド構文を使うと，既存のオブジェクトから新しいオブジェクトを作成できたり，結合できたりする
