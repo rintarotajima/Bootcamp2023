@@ -536,3 +536,13 @@ function displayInfo(name, age = 25, city = 'Tokyo') {
 displayInfo('John', 30, 'NewYork'); // Name: John, Age: 30, City: NewYork
 displayInfo('Emily'); // Name: Emily, Age: 25, City: Tokyo
 displayInfo('Mike', undefined, 'Sydney'); // Name; Mike, Age: 25, City: Sydney
+
+
+// 関数呼び出しにおけるスプレッド構文
+const numbers = [1, 2, 3];
+const sum = (a, b, c) => a + b + c;
+console.log(sum.apply(null, numbers));
+console.log(sum(...numbers));
+
+// スプレッド構文を使うと配列の要素を個別の引数として関数に渡すことができる
+// 従来は，配列をそのまま関数に渡すと．1つの引数として扱われる
