@@ -490,3 +490,49 @@ const minPrices = prices.reduce( (min, price) => {
   return min; // それ以外の時はminに入った値を返すと最小値になる
 })
 
+
+// モダンなJavaScriptの機能
+// デフォルトパラメータ（関数の引数に初期を設定でき，引数が渡されなかった場合でもデフォルト値を使って実行できる)
+// 構文 funciton 関数名(引数1 = デフォルト値1, 引数2 = デフォルト値2, ...) { // 関数の処理}
+
+function mymultiply(a,b=1) {
+  return a * b;
+}
+
+console.log(mymultiply(5,3)); //15
+console.log(mymultiply(5)); //5
+
+// この例では，mymultiply関数の第2引数bにデフォルト値1を設定し，
+// mymultiply(5,3)と呼び出すと，aは5,bは3となる，15が返される
+// mymultiply(5)と呼び出すと，bには1がデフォルト値で設定されているので，5が返される
+
+
+/* デフォルトパラメータを使うと，関数の呼び出し側で引数を渡し忘れた場合でも
+エラーにならずに適切な処理ができるようになり，可読性が向上される */
+
+// デフォルトパラメータ演習
+function greet(name = 'Sam', greeting = 'Hello') {
+  return `${greeting}, ${name}!`;
+}
+
+console.log(greet('Kate', 'Hi')); // Hi, Kate!
+console.log(greet()); // Hello, Sam!
+console.log(greet('Alex'))// Hello,Alex!
+
+function calcSum(a = 0, b = 0, c = 0) {
+  return a + b + c;
+}
+
+console.log(calcSum(1, 2, 3)); // 6
+console.log(calcSum(1, 2)); // 3
+console.log(calcSum(1)); // 1
+console.log(calcSum()); // 0
+
+
+function displayInfo(name, age = 25, city = 'Tokyo') {
+  console.log(`Name: ${name}, Age: ${age}, City: ${city}`);
+}
+
+displayInfo('John', 30, 'NewYork'); // Name: John, Age: 30, City: NewYork
+displayInfo('Emily'); // Name: Emily, Age: 25, City: Tokyo
+displayInfo('Mike', undefined, 'Sydney'); // Name; Mike, Age: 25, City: Sydney
