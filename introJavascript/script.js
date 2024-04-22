@@ -578,3 +578,45 @@ sum1(4, 5, 6, 7, 8); // 30
 const [head, ...tail] = [1, 2, 3, 4, 5];
 console.log(head); // 1
 console.log(tail); // [2,3,4,5]
+
+
+// 配列の分割代入：配列から値を個別の変数に代入できる
+const arr = [1, 2, 3];
+const [a, b, c] = arr1;
+console.log(a); // 1
+console.log(b); // 2
+console.log(c); // 3
+
+// オブジェクトの分割代入：オブジェクトからプロパティの値を個別の変数に代入できる
+const object = { A:1, B:2, C:3}
+const { A, B } = object;
+console.log(A); //1
+console.log(B); //2 
+
+
+// パラメータの分割代入
+// 元の関数
+// function displayPersonInfo(person) {
+//   const name = person.name;
+//   const age = person.age;
+//   console.log(`Name: ${name}, Age: ${age}`);
+// }
+
+// const jun = { name: 'Jun', age: 20};
+// displayPersonInfo(jun);
+
+// 分割代入を使った関数
+function displayPersonInfo( {name , age}) {
+  console.log(`Name: ${name}, Age: ${age}`);
+}
+const jun = { name: 'Jun', age: 25}
+displayPersonInfo(jun);
+
+/* 
+分割代入を使うメリット
+personオブジェクトからnameとageプロパティを直接取り出せる
+変数nameと変数ageを再度定義する必要がない
+コードが簡潔
+*/
+
+
