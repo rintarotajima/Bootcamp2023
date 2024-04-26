@@ -1,29 +1,29 @@
-const button = document.querySelector('button');
-const h1 = document.querySelector('h1');
+// const button = document.querySelector('button');
+// const h1 = document.querySelector('h1');
 
-// クリックすると処理が実行されるかの確認
-// クリックすると背景色がランダムに変更させる機能の追加
-button.addEventListener("click", () => {
-    const newColor = makeColor();
-    document.body.style.backgroundColor = newColor;
-    h1.innerText = newColor;
-});
+// // クリックすると処理が実行されるかの確認
+// // クリックすると背景色がランダムに変更させる機能の追加
+// button.addEventListener("click", () => {
+//     const newColor = makeColor();
+//     document.body.style.backgroundColor = newColor;
+//     h1.innerText = newColor;
+// });
 
-const makeColor = function () {
-    const r = Math.floor(Math.random() * 256);
-    const g = Math.floor(Math.random() * 256);
-    const b = Math.floor(Math.random() * 256);
+// const makeColor = function () {
+//     const r = Math.floor(Math.random() * 256);
+//     const g = Math.floor(Math.random() * 256);
+//     const b = Math.floor(Math.random() * 256);
 
-    // rgb値の合計を計算
-    const total = r + g + b;
-    if (total < 300) {
-        h1.style.color = 'white';
-    } else {
-        h1.style.color = 'black';
-    }
+//     // rgb値の合計を計算
+//     const total = r + g + b;
+//     if (total < 300) {
+//         h1.style.color = 'white';
+//     } else {
+//         h1.style.color = 'black';
+//     }
 
-    return `rgb(${r},${g},${b})`;
-}
+//     return `rgb(${r},${g},${b})`;
+// }
 
 
 /* 
@@ -55,6 +55,28 @@ const showMessage = function() {
 関数式は、その式が実行されるときに関数オブジェクトを生成するため、定義された関数の前で関数を呼び出すとエラーを起こします。
 そのため、関数式の定義の後に、関数を呼び出す必要がある.
 */
+
+
+const form = document.querySelector('form');
+const productInput = document.querySelector('#product');
+const qtyInput = document.querySelector('#qty');
+const list = document.querySelector('#list');
+
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const product = productInput.value;
+    const qty = qtyInput.value;
+
+    const listItem = document.createElement('li');
+    listItem.textContent = `${product} ${qty}`;
+
+    list.appendChild(listItem);
+
+    productInput.value = "";
+    qtyInput.value = "";
+})
 
 
 
