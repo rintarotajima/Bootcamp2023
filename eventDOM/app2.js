@@ -57,48 +57,48 @@ const showMessage = function() {
 */
 
 
-const form = document.querySelector('form');
-const productInput = document.querySelector('#product');
-const qtyInput = document.querySelector('#qty');
-const list = document.querySelector('#list');
+// const form = document.querySelector('form');
+// const productInput = document.querySelector('#product');
+// const qtyInput = document.querySelector('#qty');
+// const list = document.querySelector('#list');
 
 
-form.addEventListener('submit', function(event) {
-    event.preventDefault();
+// form.addEventListener('submit', function(event) {
+//     event.preventDefault();
 
-    const product = productInput.value;
-    const qty = qtyInput.value;
+//     const product = productInput.value;
+//     const qty = qtyInput.value;
 
-    const listItem = document.createElement('li');
-    listItem.textContent = `${product} ${qty}`;
+//     const listItem = document.createElement('li');
+//     listItem.textContent = `${product} ${qty}`;
 
-    list.appendChild(listItem);
+//     list.appendChild(listItem);
 
-    productInput.value = "";
-    qtyInput.value = "";
-})
+//     productInput.value = "";
+//     qtyInput.value = "";
+// })
 
 
 
 // inputイベントの練習問題
-const h3 = document.querySelector('h3');
-const input = document.querySelector('#username');
+// const h3 = document.querySelector('h3');
+// const input = document.querySelector('#username');
 
-// h3の初期値を受け取る箱
-const initialText = h3.innerText
+// // h3の初期値を受け取る箱
+// const initialText = h3.innerText
 
-// inputタグに入力が確認されたときの処理
-function updateText() {
-  if (input.value === "") {
-    h3.innerText = initialText;
-  } else {
-    h3.innerText = `Welcome, ${input.value}`;
-  }
+// // inputタグに入力が確認されたときの処理
+// function updateText() {
+//   if (input.value === "") {
+//     h3.innerText = initialText;
+//   } else {
+//     h3.innerText = `Welcome, ${input.value}`;
+//   }
     
-}
+// }
 
-// 最後にイベントを発生させるためのコード
-input.addEventListener('input',updateText);
+// // 最後にイベントを発生させるためのコード
+// input.addEventListener('input',updateText);
 
 
 
@@ -116,5 +116,21 @@ child.addEventListener('click', (event) => {
 })
 
 // Child Me をクリックすると 
+
+
+// イベントデリゲーション
+/* 
+イベントデリゲーションとは、子要素やその他の後descendants要素に発生したイベントを、親要素や祖先要素でキャッチする手法
+*/
+
+const list = document.getElementById('list');
+
+list.addEventListener('click', (event) => {
+  if (event.target.tagName.toLowerCase() === 'li') {
+    console.log(`You clicked on ${event.target.textContent}`);
+  }
+})
+
+
 
 

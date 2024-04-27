@@ -20,12 +20,11 @@
         <button>追加</button>
     </form>
 
-    <ul id="list"></ul>
-
+    
     <h3>Enter Your Username</h3>
     <input type="text" id="username">
-
-
+    
+    
     <!--イベントのバブリング (ある要素で発生したイベントがその親要素まで伝播すること)-->
     <section onclick="alert('セクションクリック')">
         <p onclick="alert('段落クリック')">
@@ -38,6 +37,12 @@
         <!-- /#child -->
     </div>
     <!-- /#parent -->
+    
+    <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
 
     <script src="app2.js"></script>
 </body>
