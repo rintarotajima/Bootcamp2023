@@ -80,4 +80,25 @@ form.addEventListener('submit', function(event) {
 
 
 
+// inputイベントの練習問題
+const h3 = document.querySelector('h3');
+const input = document.querySelector('#username');
+
+// h3の初期値を受け取る箱
+const initialText = h3.innerText
+
+// inputタグに入力が確認されたときの処理
+function updateText() {
+  if (input.value === "") {
+    h3.innerText = initialText;
+  } else {
+    h3.innerText = `Welcome, ${input.value}`;
+  }
+    
+}
+
+// 最後にイベントを発生させるためのコード
+input.addEventListener('input',updateText);
+
+
 
