@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>イベントデモ</title>
 </head>
+
 <body>
     <h1>ようこそ，イベントの世界へ</h1>
     <button>クリックすると色が変わるよ</button>
@@ -23,6 +25,21 @@
     <h3>Enter Your Username</h3>
     <input type="text" id="username">
 
+
+    <!--イベントのバブリング (ある要素で発生したイベントがその親要素まで伝播すること)-->
+    <section onclick="alert('セクションクリック')">
+        <p onclick="alert('段落クリック')">
+            <button onclick="alert('ボタンクリック')">クリック</button>
+        </p>
+    </section>
+    
+    <div id="parent">
+        <div id="child">Click Me</div>
+        <!-- /#child -->
+    </div>
+    <!-- /#parent -->
+
     <script src="app2.js"></script>
 </body>
+
 </html>

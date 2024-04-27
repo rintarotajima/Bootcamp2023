@@ -102,3 +102,19 @@ input.addEventListener('input',updateText);
 
 
 
+// イベントバブリング
+const parent = document.querySelector('#parent');
+const child = document.querySelector('#child');
+
+parent.addEventListener('click', () => {
+  console.log('Parent Clicked');
+})
+
+child.addEventListener('click', (event) => {
+  console.log('Child Clicked');
+  event.stopPropagation();  // イベントが伝播するのを止めるメソッド
+})
+
+// Child Me をクリックすると 
+
+
