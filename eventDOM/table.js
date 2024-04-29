@@ -1,10 +1,42 @@
-const p1button = document.querySelector('#p1button');
-const p2button = document.querySelector('#p2button');
-const p1Score = document.querySelector('#p1Score');
-const p2Score = document.querySelector('#p2Score');
+const p1Button = document.querySelector('#p1button');
+const p2Button = document.querySelector('#p2button');
+const p1Display = document.querySelector('#p1Score');
+const p2Display = document.querySelector('#p2Score');
+const resetBtn = document.querySelector('#resetbutton');
 
-p1button.addEventListener('click', updateP1score);
+let p1Score = 0;
+let winScore = 5;
+let p2Score = 0;
+let isGameOver = false;
 
-function updateP1score() {
-    p1Score += 1;
-}
+p1Button.addEventListener('click', function () {
+    if (!isGameOver === true) {
+        p1Score++;
+        p1Display.textContent = p1Score;
+        if (p1Score === winScore) {
+            isGameOver = true;
+        }
+    }
+})
+
+p2Button.addEventListener('click', function () {
+    if (!isGameOver === true) {
+        p2Score++;
+        p2Display.textContent = p2Score;
+        if (p2Score === winScore) {
+            isGameOver = true;
+        }
+    }
+})
+
+resetBtn.addEventListener('click', function () {
+    p1Score = 0;
+    p2Score = 0;
+    p1Display.textContent = 0;
+    p2Display.textContent = 0;
+})
+
+
+
+
+
