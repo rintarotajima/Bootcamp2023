@@ -19,9 +19,12 @@ let p2Score = 0;
 let isGameOver = false;
 
 function updateScores(player, opponent) {
-    if (!isGameOver === true) {
-        player.score++;
+    if (!isGameOver) {
+        player.score +=1;
         player.display.textContent = player.score;
+        opponent.score  +=1;
+        opponent.display.textContent = opponent.score;
+
         if (player.score === winScore) {
             isGameOver = true;
             player.display.classList.add('has-text-success');
@@ -54,7 +57,7 @@ function reset() {
    for (let p of [p1, p2]) {
     p.score = 0;
     p.display.textContent = 0;
-    p.display.classList.remove('has-text-white', 'has-text-danger');
+    p.display.classList.remove('has-text-success', 'has-text-danger');
     p.button.disabled = false;
    }
 }
