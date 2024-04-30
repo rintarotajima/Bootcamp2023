@@ -2,10 +2,11 @@ const p1Button = document.querySelector('#p1button');
 const p2Button = document.querySelector('#p2button');
 const p1Display = document.querySelector('#p1Score');
 const p2Display = document.querySelector('#p2Score');
-const resetBtn = document.querySelector('#resetbutton');
+const winScoreSelect = document.querySelector('#winScore');
+const resetButton = document.querySelector('#resetbutton');
 
 let p1Score = 0;
-let winScore = 5;
+let winScore = 3;
 let p2Score = 0;
 let isGameOver = false;
 
@@ -15,6 +16,8 @@ p1Button.addEventListener('click', function () {
         p1Display.textContent = p1Score;
         if (p1Score === winScore) {
             isGameOver = true;
+            p1Display.classList.add('winner');
+            p2Display.classList.add('loser');
         }
     }
 })
@@ -25,17 +28,29 @@ p2Button.addEventListener('click', function () {
         p2Display.textContent = p2Score;
         if (p2Score === winScore) {
             isGameOver = true;
+            p2Display.classList.add('winner');
+            p1Display.classList.add('loser');
         }
     }
 })
 
-resetBtn.addEventListener('click', function () {
+resetButton.addEventListener('click', reset)
+
+winScoreSelect.addEventListener('change', function () {
+    winScore = parseInt(this.value);
+    reset();
+})
+
+
+function reset() {
+    isGameOver = false;
     p1Score = 0;
     p2Score = 0;
     p1Display.textContent = 0;
     p2Display.textContent = 0;
-})
-
+    p1Display.classList.remove('winner','loser');
+    p2Display.classList.remove('winner','loser');
+}
 
 
 
