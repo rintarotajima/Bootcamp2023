@@ -22,8 +22,13 @@ function updateScores(player, opponent) {
     if (!isGameOver) {
         player.score +=1;
         player.display.textContent = player.score;
-        opponent.score  +=1;
-        opponent.display.textContent = opponent.score;
+
+        // 2点差が付くまでは、スコアを更新する処理
+        let maxScore = winScore + 2;
+        while (Math.abs(player.score - opponent.score) < 2 && player.score < maxScore && opponent.score < maxScore) {
+            player.score +=1;
+            player.display.textContent = player.score;
+        }
 
         if (player.score === winScore) {
             isGameOver = true;
