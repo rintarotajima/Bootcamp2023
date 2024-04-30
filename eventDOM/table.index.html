@@ -1,39 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>卓球ゲーム</title>
-    <style>
-        .winner {
-            color: green;
-        }
-        .loser {
-            color: red;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
 </head>
+
 <body>
-    <h1><span id="p1Score">0</span>対<span id="p2Score">0</span></h1>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-half is-offset-one-quarter">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-2by1">
+                                <img src="https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    alt="">
+                            </figure>
+                        </div>
+                        <header class="card-header">
+                            <p class="card-header-title">卓球得点表</p>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                <h1 class="title is-1"><span id="p1Score">0</span> 対 <span id="p2Score">0</span></h1>
+                                <p class="subtitle">下のボタンを押して得点管理をしよう!</p>
+                                <label for="winScore" class="label is-large is-inline">何点先取?</label>
+                                <div class="select is-rounded">
+                                    <select name="" id="winScore">
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                    </select>
+                                </div>
+                            </div>
 
-    <select name="" id="winScore">
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-    </select>
-    <!-- /# -->
+                        </div>
+                        <footer class="card-footer">
+                            <button id="p1button" class="button is-primary is-large card-footer-item">+1 プレーヤ1</button>
+                            <button id="p2button" class="button is-info is-large card-footer-item">+1 プレーヤ2</button>
+                            <button id="resetbutton" class="button is-danger is-large card-footer-item">リセット</button>
+                        </footer>
+                    </div>
 
-    <button id="p1button">+1 プレーヤ1</button>
-    <button id="p2button">+1 プレーヤ2</button>
-    <button id="resetbutton">リセット</button>
+                </div>
+                <!-- /.column -->
+            </div>
+            <!-- /.columns -->
+        </div>
+        <!-- /.container -->
+        <!-- /# -->
 
+    </section>
+    <!-- /.section -->
 
     <script src="table.js"></script>
 </body>
+
 </html>
