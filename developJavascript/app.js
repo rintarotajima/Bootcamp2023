@@ -14,18 +14,18 @@
 JavaScriptの関数呼び出しの内部の仕組みてきなもの
 */
 
-console.log('スタート');
+// console.log('スタート');
 
-setTimeout(() => {
-    console.log('setTimeout内部');
-},1000);
+// setTimeout(() => {
+//     console.log('setTimeout内部');
+// },1000);
 
-Promise.resolve()
-    .then(() => console.log('Promise次のtick'))
-    .then(() => console.log('Promise次の次のtick'))
+// Promise.resolve()
+//     .then(() => console.log('Promise次のtick'))
+//     .then(() => console.log('Promise次の次のtick'))
 
 
-console.log('終了');
+// console.log('終了');
 
 
 /*
@@ -74,17 +74,17 @@ console.log('終了');が実行され、'終了'が出力されます。
 
 
 
-function foo() {
-    console.log('foo関数の処理')
-}
+// function foo() {
+//     console.log('foo関数の処理')
+// }
 
-function bar() {
-    console.log('bar関数の開始')
-    foo(); // foo関数を呼び出す
-    console.log('bar関数の終了')
-}
+// function bar() {
+//     console.log('bar関数の開始')
+//     foo(); // foo関数を呼び出す
+//     console.log('bar関数の終了')
+// }
 
-bar();
+// bar();
 
 /* 
 実行の流れ 
@@ -106,3 +106,36 @@ boo();がコールスタックからポップ
 */
 
 
+// setTimeout(() => {
+//     document.body.style.backgroundColor = 'red';
+//     setTimeout(() => {
+//         document.body.style.backgroundColor = 'orange';
+//         setTimeout(() => {
+//             document.body.style.backgroundColor = 'yellow';
+//         }, 1000)
+//     }, 1000)
+// }, 1000)
+
+
+const delayedColorChange = (newColor, delay, doNext) => {
+    setTimeout(() => {
+        document.body.style.backgroundColor = newColor;
+        doNext && doNext();
+    }, delay)
+}
+
+delayedColorChange('red', 1000, () => {
+    delayedColorChange('orange', 1000, () => {
+        delayedColorChange('yellow', 1000, () => {
+            delayedColorChange('olive', 1000, () => {
+                delayedColorChange('teal', 1000)
+            })
+        })
+    })
+})
+
+/* 
+コールバック地獄とは、複数の非同期処理が絡むことで、コードの可読性が落ちることを指す.
+そこで、ES6 からPromiseやAsync・awaitが導入され、非同期処理をより簡潔に扱えるようにした
+
+*/
