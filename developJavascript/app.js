@@ -117,25 +117,75 @@ boo();がコールスタックからポップ
 // }, 1000)
 
 
-const delayedColorChange = (newColor, delay, doNext) => {
-    setTimeout(() => {
-        document.body.style.backgroundColor = newColor;
-        doNext && doNext();
-    }, delay)
-}
+// const delayedColorChange = (newColor, delay, doNext) => {
+//     setTimeout(() => {
+//         document.body.style.backgroundColor = newColor;
+//         doNext && doNext();
+//     }, delay)
+// }
 
-delayedColorChange('red', 1000, () => {
-    delayedColorChange('orange', 1000, () => {
-        delayedColorChange('yellow', 1000, () => {
-            delayedColorChange('olive', 1000, () => {
-                delayedColorChange('teal', 1000)
-            })
-        })
-    })
-})
+// delayedColorChange('red', 1000, () => {
+//     delayedColorChange('orange', 1000, () => {
+//         delayedColorChange('yellow', 1000, () => {
+//             delayedColorChange('olive', 1000, () => {
+//                 delayedColorChange('teal', 1000)
+//             })
+//         })
+//     })
+// })
 
 /* 
 コールバック地獄とは、複数の非同期処理が絡むことで、コードの可読性が落ちることを指す.
 そこで、ES6 からPromiseやAsync・awaitが導入され、非同期処理をより簡潔に扱えるようにした
 
+*/
+
+// ダミーのリクエスト関数を定義
+function makeRequest(url, callback) {
+    // リクエストを模擬するためにタイムアウトを設定
+    setTimeout(() => {
+        // ここで、リクエストが完了したと仮定
+        console.log(`リクエスト完了:${url}`)
+        // コールバック関数を呼び出し、レスポンスデータを渡す
+        callback(null, {status: 200, data: 'ダミーデータ'})
+    }, 2000) // 2秒後にリクエストが完了したと仮定
+}
+
+// リクエストを実行する関数
+function fetchDeta(url) {
+        // makeRequest関数をコールバック関数として渡す
+        makeRequest(url, (error, response) => {
+            if (error) {
+                console.error(`エラー；${error}`);
+                return;
+            }
+            console.log(`ステータスコード: ${response.status}`);
+            console.log(`データ: ${response.data}`)
+            makeRequest(url, (error, response) => {
+                if (error) {
+                    console.log(`エラー: ${error}`);
+                    return;
+                }
+                console.log(`ステータスコード: ${response.status}`);
+                console.log(`データ: ${response.data}`);
+            })
+        })
+}
+
+fetchDeta(`https://example.com`);
+
+
+// コールバック関数とは引数として他の関数に渡され、外側の関数の中で呼び出されて、何らかのルーチンやアクションを完了させる関数
+
+
+/* 
+makeRequest関数がダミーのリクエストを模擬している。この関数は引数として2つの引数を受け取る
+1つ目は、urlで、リクエスト先のurlを表し、2つ目はcallbackでリクエストが完了した際に呼び出される関数
+makeRequest関数内部では、setTimeoutを使って、リクエストが完了するまでの時間を模擬しており、
+2秒後にリクエストが完了したと想定している
+リクエストが完了した時点で、コールバック関数callbackを呼び出し、レスポンスデータを渡している
+
+fetchData関数は実際にリクエストを発行する関数で、この関数はmakeRequestを呼び出し、コールバック関数としてアロー関数を渡している
+このアロー関数内部では、エラーがあった場合は、それを処理し、エラーがない場合は、レスポンスデータを渡している
+最後に、fetchData関数を呼び出して、ダミーのリクエストを発行している
 */
