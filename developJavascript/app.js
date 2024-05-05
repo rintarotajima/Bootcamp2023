@@ -141,38 +141,38 @@ boo();がコールスタックからポップ
 */
 
 // ダミーのリクエスト関数を定義
-function makeRequest(url, callback) {
-    // リクエストを模擬するためにタイムアウトを設定
-    setTimeout(() => {
-        // ここで、リクエストが完了したと仮定
-        console.log(`リクエスト完了:${url}`)
-        // コールバック関数を呼び出し、レスポンスデータを渡す
-        callback(null, {status: 200, data: 'ダミーデータ'})
-    }, 2000) // 2秒後にリクエストが完了したと仮定
-}
+// function makeRequest(url, callback) {
+//     // リクエストを模擬するためにタイムアウトを設定
+//     setTimeout(() => {
+//         // ここで、リクエストが完了したと仮定
+//         console.log(`リクエスト完了:${url}`)
+//         // コールバック関数を呼び出し、レスポンスデータを渡す
+//         callback(null, {status: 200, data: 'ダミーデータ'})
+//     }, 2000) // 2秒後にリクエストが完了したと仮定
+// }
 
-// リクエストを実行する関数
-function fetchDeta(url) {
-        // makeRequest関数をコールバック関数として渡す
-        makeRequest(url, (error, response) => {
-            if (error) {
-                console.error(`エラー；${error}`);
-                return;
-            }
-            console.log(`ステータスコード: ${response.status}`);
-            console.log(`データ: ${response.data}`)
-            makeRequest(url, (error, response) => {
-                if (error) {
-                    console.log(`エラー: ${error}`);
-                    return;
-                }
-                console.log(`ステータスコード: ${response.status}`);
-                console.log(`データ: ${response.data}`);
-            })
-        })
-}
+// // リクエストを実行する関数
+// function fetchDeta(url) {
+//         // makeRequest関数をコールバック関数として渡す
+//         makeRequest(url, (error, response) => {
+//             if (error) {
+//                 console.error(`エラー；${error}`);
+//                 return;
+//             }
+//             console.log(`ステータスコード: ${response.status}`);
+//             console.log(`データ: ${response.data}`)
+//             makeRequest(url, (error, response) => {
+//                 if (error) {
+//                     console.log(`エラー: ${error}`);
+//                     return;
+//                 }
+//                 console.log(`ステータスコード: ${response.status}`);
+//                 console.log(`データ: ${response.data}`);
+//             })
+//         })
+// }
 
-fetchDeta(`https://example.com`);
+// fetchDeta(`https://example.com`);
 
 
 // コールバック関数とは引数として他の関数に渡され、外側の関数の中で呼び出されて、何らかのルーチンやアクションを完了させる関数
@@ -189,3 +189,6 @@ fetchData関数は実際にリクエストを発行する関数で、この関�
 このアロー関数内部では、エラーがあった場合は、それを処理し、エラーがない場合は、レスポンスデータを渡している
 最後に、fetchData関数を呼び出して、ダミーのリクエストを発行している
 */
+
+
+
