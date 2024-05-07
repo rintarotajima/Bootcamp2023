@@ -320,8 +320,44 @@ const fakeRequestPromise = (url) => {
 //         console.log(error)
 //     })
 
+// asyncキーワード
+async function hello() {
 
+}
 
+const sing = async () => {
+    throw new Error('問題が起きました');
+    return 'あいうえお';
+}
 
+sing()
+    .then((data) => {
+    console.log('成功!', data);
+    })
+    .catch((error) => {
+        console.log('エラー');
+        console.log(error);
+    })
 
+const login = async (username, password) => {
+    if (!username || !password) {
+        throw new Error('ユーザ名またはパスワードがありません');
+    }
+
+    if (password === 'secret') {
+        return 'ようこそ';
+    }
+
+    throw new Error('パスワードがまちがっています');
+}
+
+login('hoge', 'secret')
+    .then(msg => {
+        console.log('成功');
+        console.log(msg)
+    })
+    .catch(error => {
+        console.log('エラーーーー');
+        console.log(error);
+    })
 
