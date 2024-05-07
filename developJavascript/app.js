@@ -256,15 +256,40 @@ document.body.style.backgroundColor = 'orange'; // 背景：オレンジ
 
 
 /* また、上記のコードをネストすることで再現できる */
-setTimeout(() => {
-    document.body.style.backgroundColor = 'red';
-    setTimeout(() => {
-        document.body.style.backgroundColor = 'orange';
-        setTimeout(() => {
-            document.body.style.backgroundColor = 'yellow';
-        }, 1000)
-    }, 1000)
-}, 1000)
+// setTimeout(() => {
+//     document.body.style.backgroundColor = 'red';
+//     setTimeout(() => {
+//         document.body.style.backgroundColor = 'orange';
+//         setTimeout(() => {
+//             document.body.style.backgroundColor = 'yellow';
+//         }, 1000)
+//     }, 1000)
+// }, 1000)
 
 // しかし、ネストしたコードは可読性・保守性が低い.
+
+/* 3→関数を作って、背景色を変更 */
+const delayColorChange = (newColor, delay, doNext) => {
+    setTimeout(() => {
+        document.body.style.backgroundColor = newColor;
+        doNext && doNext();
+    }, delay) 
+}
+
+// delayColorChange('red', 1000);
+// delayColorChange('orange', 2000);
+// delayColorChange('yellow', 3000);
+
+// 上記のコードは 1 & 2 のコードより可読性・保守性が向上し、再利用性が高いなどのメリットが生まれた
+
+delayColorChange('red', 1000 , () => {
+    delayColorChange('orange', 1000, () => {
+        delayColorChange('yellow', 1000);
+    })
+})
+
+// 上記のコードは、3 のコードに、delayColorChange関数を高階関数にしたものである
+/* 高階関数とは、関数を引数に取ったり、関数を返す関数のことを指す */
+
+
 
