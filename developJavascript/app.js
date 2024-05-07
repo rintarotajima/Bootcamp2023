@@ -271,7 +271,7 @@ const fakeRequestPromise = (url) => {
     return new Promise((resolve, reject) => {
         const delay = Math.floor(Math.random() * 4500) + 500;
         setTimeout(() => {
-            if (delay > 4000) {
+            if (delay > 100) {
                 reject('コネクションアウト');
             } else {
                 resolve(`ダミーデータ(${url})`);
@@ -282,8 +282,14 @@ const fakeRequestPromise = (url) => {
 
 
 async function makeRequest() {
-    const data1 = await fakeRequestPromise('/hoge');
-    console.log(data1);
+    try {
+        const data1 = await fakeRequestPromise('/hoge');
+        console.log(data1);
+    }
+    catch (e) {
+        console.log('エラー発生!!!')
+        console.log(e);
+    }
 }
 
 makeRequest();
@@ -343,7 +349,7 @@ const sing = async () => {
 
 sing()
     .then((data) => {
-    console.log('成功!', data);
+        console.log('成功!', data);
     })
     .catch((error) => {
         console.log('エラー');
@@ -374,19 +380,19 @@ login('hoge', 'secret')
 
 
 
-    
-    const colorChange = (color, delay) => {
-        return new Promise ((resolve, reject) => {
-            setTimeout(() => {
-                document.body.style.backgroundColor = color;
-                resolve();
-            }, delay)
-        })
-    }
-    
-    // awaitキーワード
+
+const colorChange = (color, delay) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            document.body.style.backgroundColor = color;
+            resolve();
+        }, delay)
+    })
+}
+
+// awaitキーワード
 async function rainbow() {
-    await colorChange('red',1000);
+    await colorChange('red', 1000);
     await colorChange('orange', 1000);
     await colorChange('yellow', 1000);
     await colorChange('green', 1000);
@@ -402,6 +408,7 @@ async function rainbow() {
 async function printrainbow() {
     await rainbow();
     console.log('rainbow完了');
+
 }
 
 printrainbow();
