@@ -280,24 +280,27 @@ const fakeRequestPromise = (url) => {
     })
 }
 
-fakeRequestPromise('yappari/api/naruhodo/page1')
-    .then(() => {
-        console.log('成功1');
-        fakeRequestPromise('yappari/api/page2')
-            .then(() => {
-                console.log('成功2');
-                fakeRequestPromise('yappari/api/page3')
-                    .then(() => {
-                        console.log('成功3');
-                    }).catch(() => {
-                        console.log('失敗3');
-                    })
-            }).catch(() => {
-                console.log('失敗2');
-            })
-    }).catch(() => {
-        console.log('失敗1');
-    })
+// Promiseの真の力を使わずに記述したコード
+// fakeRequestPromise('yappari/api/naruhodo/page1')
+//     .then(() => {
+//         console.log('成功1');
+//         fakeRequestPromise('yappari/api/page2')
+//             .then(() => {
+//                 console.log('成功2');
+//                 fakeRequestPromise('yappari/api/page3')
+//                     .then(() => {
+//                         console.log('成功3');
+//                     }).catch(() => {
+//                         console.log('失敗3');
+//                     })
+//             }).catch(() => {
+//                 console.log('失敗2');
+//             })
+//     }).catch(() => {
+//         console.log('失敗1');
+//     })
+
+
 
 
 
