@@ -199,11 +199,11 @@ const delayColorChange = (newColor, delay, doNext) => {
 
 // 上記のコードは 1 & 2 のコードより可読性・保守性が向上し、再利用性が高いなどのメリットが生まれた
 
-delayColorChange('red', 1000, () => {
-    delayColorChange('orange', 1000, () => {
-        delayColorChange('yellow', 1000);
-    })
-})
+// delayColorChange('red', 1000, () => {
+//     delayColorChange('orange', 1000, () => {
+//         delayColorChange('yellow', 1000);
+//     })
+// })
 
 // 上記のコードは、3 のコードに、delayColorChange関数を高階関数にしたものである
 /* 高階関数とは、関数を引数に取ったり、関数を返す関数のことを指す */
@@ -280,6 +280,14 @@ const fakeRequestPromise = (url) => {
     })
 }
 
+
+async function makeRequest() {
+    const data1 = await fakeRequestPromise('/hoge');
+    console.log(data1);
+}
+
+makeRequest();
+
 // Promiseの真の力を使わずに記述したコード
 // fakeRequestPromise('yappari/api/naruhodo/page1')
 //     .then(() => {
@@ -319,6 +327,9 @@ const fakeRequestPromise = (url) => {
 //         console.log('失敗');
 //         console.log(error)
 //     })
+
+
+
 
 // asyncキーワード
 async function hello() {
@@ -360,4 +371,38 @@ login('hoge', 'secret')
         console.log('エラーーーー');
         console.log(error);
     })
+
+
+
+    
+    const colorChange = (color, delay) => {
+        return new Promise ((resolve, reject) => {
+            setTimeout(() => {
+                document.body.style.backgroundColor = color;
+                resolve();
+            }, delay)
+        })
+    }
+    
+    // awaitキーワード
+async function rainbow() {
+    await colorChange('red',1000);
+    await colorChange('orange', 1000);
+    await colorChange('yellow', 1000);
+    await colorChange('green', 1000);
+    await colorChange('blue', 1000);
+    await colorChange('indigo', 1000);
+}
+
+// rainbow()
+//         .then(() => {
+//             console.log('rainbow完了');
+//         })
+
+async function printrainbow() {
+    await rainbow();
+    console.log('rainbow完了');
+}
+
+printrainbow();
 
