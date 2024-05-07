@@ -229,5 +229,30 @@ fetchData関数は実際にリクエストを発行する関数で、この関�
 // })
 
 
+/* 復習 (背景色を変える)*/
+document.body.style.backgroundColor = 'red'; // 背景：レッド
+document.body.style.backgroundColor = 'orange'; // 背景：オレンジ
+// 上記のコードの結果、オレンジのみ表示される
+
+// 動的に背景色を変更
+setTimeout(() => {
+    document.body.style.backgroundColor = 'red';
+}, 1000)
+
+setTimeout(() => {
+    document.body.style.backgroundColor = 'orange';
+}, 2000)
+
+setTimeout(() => {
+    document.body.style.backgroundColor = 'yellow';
+}, 3000)
+
+// 上記のコードの結果、背景色がレッド→オレンジ→イエローになる
+/* 
+    欠点 
+    可読性が低い：複数のsetTimeout関数が並んであるため、コードの見通しが悪く、何が起こるか把握しにくい
+    コードの保守性が低い：setTimeoutの中身が直接書かれているため、再利用できない, コードを変更する際に関連する部分を全て編集しないといけない
+*/
+
 
 
