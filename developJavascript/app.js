@@ -116,31 +116,31 @@ Promiseとは
 // console.log('一番目');
 
 // setTimeout( () => {
-    //     console.log('二番目 (一秒後に実行)');
-    // },1000)
-    
-    // console.log('三番目');
-    
-    // JavaScriptは非同期言語であるため、１つ前の処理に実行に時間が掛かる場合は、実行完了を待たずに次の処理をする
-    
-    // console.log('一番目');
-    
-    // // お約束を取り付けたい処理
-    // new Promise((resolve) => {
-        //     // 一秒後に実行する処理
-        //     setTimeout(() => {
-            //         console.log('二番目');
-            //         // 無事処理が終わったことを伝える
-            //         resolve();
-            //     },1000)
-            // }).then(() => {
-                //     // 処理が無事終わったことを受け取って実行される処理
-                //     console.log('三番目');
-                // })
-                
-                // // Promiseインスタンスの作成
-                // const promise = new Promise((resolve, reject) => {
-                    //     reject();
+//     console.log('二番目 (一秒後に実行)');
+// },1000)
+
+// console.log('三番目');
+
+// JavaScriptは非同期言語であるため、１つ前の処理に実行に時間が掛かる場合は、実行完了を待たずに次の処理をする
+
+// console.log('一番目');
+
+// // お約束を取り付けたい処理
+// new Promise((resolve) => {
+//     // 一秒後に実行する処理
+//     setTimeout(() => {
+//         console.log('二番目');
+//         // 無事処理が終わったことを伝える
+//         resolve();
+//     },1000)
+// }).then(() => {
+//     // 処理が無事終わったことを受け取って実行される処理
+//     console.log('三番目');
+// })
+
+// // Promiseインスタンスの作成
+// const promise = new Promise((resolve, reject) => {
+//     reject();
 // }).catch(() => {
 //     console.log('resolveしたよ');
 // })
@@ -153,80 +153,80 @@ Promiseとは
 
 // 動的に背景色を変更
 // setTimeout(() => {
-    //     document.body.style.backgroundColor = 'red';
-    // }, 1000)
-    
-    // setTimeout(() => {
-        //     document.body.style.backgroundColor = 'orange';
-        // }, 2000)
-        
-        // setTimeout(() => {
-            //     document.body.style.backgroundColor = 'yellow';
-            // }, 3000)
-            
-            // 上記のコードの結果、背景色がレッド→オレンジ→イエローになる
-            /* 
-            欠点 
-            可読性が低い：複数のsetTimeout関数が並んであるため、コードの見通しが悪く、何が起こるか把握しにくい
-            コードの保守性が低い：setTimeoutの中身が直接書かれているため、再利用できない, コードを変更する際に関連する部分を全て編集しないといけない
-            */
-           
-           
-           /* また、上記のコードをネストすることで再現できる */
-           // setTimeout(() => {
-               //     document.body.style.backgroundColor = 'red';
-               //     setTimeout(() => {
+//     document.body.style.backgroundColor = 'red';
+// }, 1000)
+
+// setTimeout(() => {
+//     document.body.style.backgroundColor = 'orange';
+// }, 2000)
+
+// setTimeout(() => {
+//     document.body.style.backgroundColor = 'yellow';
+// }, 3000)
+
+// 上記のコードの結果、背景色がレッド→オレンジ→イエローになる
+/* 
+欠点 
+可読性が低い：複数のsetTimeout関数が並んであるため、コードの見通しが悪く、何が起こるか把握しにくい
+コードの保守性が低い：setTimeoutの中身が直接書かれているため、再利用できない, コードを変更する際に関連する部分を全て編集しないといけない
+*/
+
+
+/* また、上記のコードをネストすることで再現できる */
+// setTimeout(() => {
+//     document.body.style.backgroundColor = 'red';
+//     setTimeout(() => {
 //         document.body.style.backgroundColor = 'orange';
 //         setTimeout(() => {
-    //             document.body.style.backgroundColor = 'yellow';
-    //         }, 1000)
-    //     }, 1000)
-    // }, 1000)
-    
-    // しかし、ネストしたコードは可読性・保守性が低い.
-    
-    /* 3→関数を作って、背景色を変更 */
-    const delayColorChange = (newColor, delay, doNext) => {
-        setTimeout(() => {
-            document.body.style.backgroundColor = newColor;
-            doNext && doNext();
-        }, delay)
-    }
-    
-    // delayColorChange('red', 1000);
-    // delayColorChange('orange', 2000);
-    // delayColorChange('yellow', 3000);
-    
-    // 上記のコードは 1 & 2 のコードより可読性・保守性が向上し、再利用性が高いなどのメリットが生まれた
+//             document.body.style.backgroundColor = 'yellow';
+//         }, 1000)
+//     }, 1000)
+// }, 1000)
 
-    delayColorChange('red', 1000, () => {
-        delayColorChange('orange', 1000, () => {
-            delayColorChange('yellow', 1000);
-        })
+// しかし、ネストしたコードは可読性・保守性が低い.
+
+/* 3→関数を作って、背景色を変更 */
+const delayColorChange = (newColor, delay, doNext) => {
+    setTimeout(() => {
+        document.body.style.backgroundColor = newColor;
+        doNext && doNext();
+    }, delay)
+}
+
+// delayColorChange('red', 1000);
+// delayColorChange('orange', 2000);
+// delayColorChange('yellow', 3000);
+
+// 上記のコードは 1 & 2 のコードより可読性・保守性が向上し、再利用性が高いなどのメリットが生まれた
+
+delayColorChange('red', 1000, () => {
+    delayColorChange('orange', 1000, () => {
+        delayColorChange('yellow', 1000);
     })
+})
 
-    // 上記のコードは、3 のコードに、delayColorChange関数を高階関数にしたものである
-    /* 高階関数とは、関数を引数に取ったり、関数を返す関数のことを指す */
-    
-    
-    /* 生じた疑問 
-    const delayColorChangeは定数でなく関数になる理由
-    constでは、delayColorChangeオブジェクト自体を定数として宣言しているが、そのオブジェクトの値は関数である
-    よって、delayColorChangeは関数オブジェクトである。
-    
-    JavaScriptでは、関数もオブジェクトの一種として扱われる
-    よって、関数を定数に代入したり、引数として渡したり、返り値として返したりできる
-    関数を変数に代入する利点
-    ・関数に名前をつけられる
-    ・関数を簡単に渡したり返したりできる
-    ・無名関数を使わずに済む
-    
-    */
-   
-   // コールバックを使ったダミーリクエスト
-   // コールバック関数とは引数として他の関数に渡され、外側の関数の中で呼び出されて、何らかのルーチンやアクションを完了させる関数
-   const fakeRequest = (url, success, failure) => {
-       const delay = Math.floor(Math.random() * 4500) + 500;
+// 上記のコードは、3 のコードに、delayColorChange関数を高階関数にしたものである
+/* 高階関数とは、関数を引数に取ったり、関数を返す関数のことを指す */
+
+
+/* 生じた疑問 
+const delayColorChangeは定数でなく関数になる理由
+constでは、delayColorChangeオブジェクト自体を定数として宣言しているが、そのオブジェクトの値は関数である
+よって、delayColorChangeは関数オブジェクトである。
+ 
+JavaScriptでは、関数もオブジェクトの一種として扱われる
+よって、関数を定数に代入したり、引数として渡したり、返り値として返したりできる
+関数を変数に代入する利点
+・関数に名前をつけられる
+・関数を簡単に渡したり返したりできる
+・無名関数を使わずに済む
+ 
+*/
+
+// コールバックを使ったダミーリクエスト
+// コールバック関数とは引数として他の関数に渡され、外側の関数の中で呼び出されて、何らかのルーチンやアクションを完了させる関数
+const fakeRequest = (url, success, failure) => {
+    const delay = Math.floor(Math.random() * 4500) + 500;
     setTimeout(() => {
         if (delay > 4000) {
             failure('コネクションアウト');
@@ -279,6 +279,25 @@ const fakeRequestPromise = (url) => {
         }, delay)
     })
 }
+
+fakeRequestPromise('yappari/api/naruhodo/page1')
+    .then(() => {
+        console.log('成功1');
+        fakeRequestPromise('yappari/api/page2')
+            .then(() => {
+                console.log('成功2');
+                fakeRequestPromise('yappari/api/page3')
+                    .then(() => {
+                        console.log('成功3');
+                    }).catch(() => {
+                        console.log('失敗3');
+                    })
+            }).catch(() => {
+                console.log('失敗2');
+            })
+    }).catch(() => {
+        console.log('失敗1');
+    })
 
 
 
