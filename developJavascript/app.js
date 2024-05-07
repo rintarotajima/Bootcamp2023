@@ -237,33 +237,48 @@ Promiseとは
 }
 
 
-fakeRequest('book.com/page1', function (res) {
-    console.log('成功');
-    console.log(res);
-    fakeRequest('book.com/page2', function (res) {
-        console.log('成功');
-        console.log(res);
-        fakeRequest('book.com/page3', function (res) {
-            console.log('成功');
-            console.log(res);
-        }, function (err) {
-            console.log('エラー3');
-            console.log(err);
-        })
-    }, function (err) {
-        console.log('エラー2');
-        console.log(err);
-    })
-}, function (err) {
-    console.log('エラー1');
-    console.log(err);
-})
+// fakeRequest('book.com/page1', function (res) {
+//     console.log('成功');
+//     console.log(res);
+//     fakeRequest('book.com/page2', function (res) {
+//         console.log('成功');
+//         console.log(res);
+//         fakeRequest('book.com/page3', function (res) {
+//             console.log('成功');
+//             console.log(res);
+//         }, function (err) {
+//             console.log('エラー3');
+//             console.log(err);
+//         })
+//     }, function (err) {
+//         console.log('エラー2');
+//         console.log(err);
+//     })
+// }, function (err) {
+//     console.log('エラー1');
+//     console.log(err);
+// })
 
 
 /*
 コールバック地獄とは、複数の非同期処理が絡むことで、コードの可読性が落ちることを指す.
 そこで、ES6 からPromiseやAsync・awaitが導入され、非同期処理をより簡潔に扱えるようにした
 */
+
+
+// Promiseを使ったダミーリクエスト
+const fakeRequestPromise = (url) => {
+    return new Promise((resolve, reject) => {
+        const delay = Math.floor(Math.random() * 4500) + 500;
+        setTimeout(() => {
+            if (delay > 4000) {
+                reject('コネクションアウト');
+            } else {
+                resolve(`ダミーデータ(${url})`);
+            }
+        }, delay)
+    })
+}
 
 
 
