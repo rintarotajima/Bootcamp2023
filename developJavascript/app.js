@@ -235,17 +235,17 @@ document.body.style.backgroundColor = 'orange'; // 背景：オレンジ
 // 上記のコードの結果、オレンジのみ表示される
 
 // 動的に背景色を変更
-setTimeout(() => {
-    document.body.style.backgroundColor = 'red';
-}, 1000)
+// setTimeout(() => {
+//     document.body.style.backgroundColor = 'red';
+// }, 1000)
 
-setTimeout(() => {
-    document.body.style.backgroundColor = 'orange';
-}, 2000)
+// setTimeout(() => {
+//     document.body.style.backgroundColor = 'orange';
+// }, 2000)
 
-setTimeout(() => {
-    document.body.style.backgroundColor = 'yellow';
-}, 3000)
+// setTimeout(() => {
+//     document.body.style.backgroundColor = 'yellow';
+// }, 3000)
 
 // 上記のコードの結果、背景色がレッド→オレンジ→イエローになる
 /* 
@@ -255,4 +255,16 @@ setTimeout(() => {
 */
 
 
+/* また、上記のコードをネストすることで再現できる */
+setTimeout(() => {
+    document.body.style.backgroundColor = 'red';
+    setTimeout(() => {
+        document.body.style.backgroundColor = 'orange';
+        setTimeout(() => {
+            document.body.style.backgroundColor = 'yellow';
+        }, 1000)
+    }, 1000)
+}, 1000)
+
+// しかし、ネストしたコードは可読性・保守性が低い.
 
