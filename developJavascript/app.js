@@ -300,25 +300,28 @@ const fakeRequestPromise = (url) => {
 //         console.log('失敗1');
 //     })
 
-fakeRequestPromise('yappari/api/naruhodo/page1')
-    .then((data) => {
-        console.log('成功1');
-        console.log(data)
-        return fakeRequestPromise('yappari/api/naruhodo/page2')
-    })
-    .then(() => {
-        console.log('成功2');
-        console.log(data);
-        return fakeRequestPromise('yappari/api/naruhodo/page3')
-    })
-    .then(() => {
-        console.log('成功3');
-        console.log(data)
-    })
-    .catch((error) => {
-        console.log('失敗');
-        console.log(error)
-    })
+// fakeRequestPromise('yappari/api/naruhodo/page1')
+//     .then((data) => {
+//         console.log('成功1');
+//         console.log(data)
+//         return fakeRequestPromise('yappari/api/naruhodo/page2')
+//     })
+//     .then(() => {
+//         console.log('成功2');
+//         console.log(data);
+//         return fakeRequestPromise('yappari/api/naruhodo/page3')
+//     })
+//     .then(() => {
+//         console.log('成功3');
+//         console.log(data)
+//     })
+//     .catch((error) => {
+//         console.log('失敗');
+//         console.log(error)
+//     })
+
+
+
 
 
 
