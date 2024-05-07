@@ -230,8 +230,8 @@ fetchData関数は実際にリクエストを発行する関数で、この関�
 
 
 /* 復習 (背景色を変える)*/
-document.body.style.backgroundColor = 'red'; // 背景：レッド
-document.body.style.backgroundColor = 'orange'; // 背景：オレンジ
+// document.body.style.backgroundColor = 'red'; // 背景：レッド
+// document.body.style.backgroundColor = 'orange'; // 背景：オレンジ
 // 上記のコードの結果、オレンジのみ表示される
 
 // 動的に背景色を変更
@@ -273,7 +273,7 @@ const delayColorChange = (newColor, delay, doNext) => {
     setTimeout(() => {
         document.body.style.backgroundColor = newColor;
         doNext && doNext();
-    }, delay) 
+    }, delay)
 }
 
 // delayColorChange('red', 1000);
@@ -282,7 +282,7 @@ const delayColorChange = (newColor, delay, doNext) => {
 
 // 上記のコードは 1 & 2 のコードより可読性・保守性が向上し、再利用性が高いなどのメリットが生まれた
 
-delayColorChange('red', 1000 , () => {
+delayColorChange('red', 1000, () => {
     delayColorChange('orange', 1000, () => {
         delayColorChange('yellow', 1000);
     })
@@ -305,6 +305,42 @@ delayColorChange('red', 1000 , () => {
     ・無名関数を使わずに済む
 
 */
+
+// コールバックを使ったダミーリクエスト
+const fakeRequest = (url, success, failure) => {
+    const delay = Math.floor(Math.random() * 4500) + 500;
+    setTimeout(() => {
+        if (delay > 4000) {
+            failure('コネクションアウト');
+        } else {
+            success(`ダミーデータ：${url}`)
+        }
+    }, delay);
+}
+
+
+fakeRequest('book.com/page1', function (res) {
+    console.log('成功');
+    console.log(res);
+    fakeRequest('book.com/page2', function (res) {
+        console.log('成功');
+        console.log(res);
+        fakeRequest('book.com/page3', function (res) {
+            console.log('成功');
+            console.log(res);
+        }, function (err) {
+            console.log('エラー3');
+            console.log(err);
+        })
+    }, function (err) {
+        console.log('エラー2');
+        console.log(err);
+    })
+}, function (err) {
+    console.log('エラー1');
+    console.log(err);
+})
+
 
 
 
