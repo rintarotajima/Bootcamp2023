@@ -312,6 +312,7 @@ makeRequest();
 //         console.log('失敗1');
 //     })
 
+// Promiseの真の力を使って記述したコード
 // fakeRequestPromise('yappari/api/naruhodo/page1')
 //     .then((data) => {
 //         console.log('成功1');
