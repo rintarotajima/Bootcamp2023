@@ -335,48 +335,53 @@ makeRequest();
 //     })
 
 
+// 自作Promise
+new Promise((resolve, reject) => {
+    resolve();
+})
+
 
 
 // asyncキーワード
-async function hello() {
+// async function hello() {
 
-}
+// }
 
-const sing = async () => {
-    throw new Error('問題が起きました');
-    return 'あいうえお';
-}
+// const sing = async () => {
+//     throw new Error('問題が起きました');
+//     return 'あいうえお';
+// }
 
-sing()
-    .then((data) => {
-        console.log('成功!', data);
-    })
-    .catch((error) => {
-        console.log('エラー');
-        console.log(error);
-    })
+// sing()
+//     .then((data) => {
+//         console.log('成功!', data);
+//     })
+//     .catch((error) => {
+//         console.log('エラー');
+//         console.log(error);
+//     })
 
-const login = async (username, password) => {
-    if (!username || !password) {
-        throw new Error('ユーザ名またはパスワードがありません');
-    }
+// const login = async (username, password) => {
+//     if (!username || !password) {
+//         throw new Error('ユーザ名またはパスワードがありません');
+//     }
 
-    if (password === 'secret') {
-        return 'ようこそ';
-    }
+//     if (password === 'secret') {
+//         return 'ようこそ';
+//     }
 
-    throw new Error('パスワードがまちがっています');
-}
+//     throw new Error('パスワードがまちがっています');
+// }
 
-login('hoge', 'secret')
-    .then(msg => {
-        console.log('成功');
-        console.log(msg)
-    })
-    .catch(error => {
-        console.log('エラーーーー');
-        console.log(error);
-    })
+// login('hoge', 'secret')
+//     .then(msg => {
+//         console.log('成功');
+//         console.log(msg)
+//     })
+//     .catch(error => {
+//         console.log('エラーーーー');
+//         console.log(error);
+//     })
 
 
 
@@ -389,6 +394,8 @@ const colorChange = (color, delay) => {
         }, delay)
     })
 }
+
+colorChange('red', 1000);
 
 // awaitキーワード
 async function rainbow() {
