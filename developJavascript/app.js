@@ -398,25 +398,25 @@ const colorChange = (color, delay) => {
 colorChange('red', 1000);
 
 // awaitキーワード
-async function rainbow() {
-    await colorChange('red', 1000);
-    await colorChange('orange', 1000);
-    await colorChange('yellow', 1000);
-    await colorChange('green', 1000);
-    await colorChange('blue', 1000);
-    await colorChange('indigo', 1000);
-}
+// async function rainbow() {
+//     await colorChange('red', 1000);
+//     await colorChange('orange', 1000);
+//     await colorChange('yellow', 1000);
+//     await colorChange('green', 1000);
+//     await colorChange('blue', 1000);
+//     await colorChange('indigo', 1000);
+// }
 
-// rainbow()
-//         .then(() => {
-//             console.log('rainbow完了');
-//         })
+// // rainbow()
+// //         .then(() => {
+// //             console.log('rainbow完了');
+// //         })
 
-async function printrainbow() {
-    await rainbow();
-    console.log('rainbow完了');
+// async function printrainbow() {
+//     await rainbow();
+//     console.log('rainbow完了');
 
-}
+// }
 
-printrainbow();
+// printrainbow();
 
