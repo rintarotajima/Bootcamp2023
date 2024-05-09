@@ -16,8 +16,4 @@ const getPerson = async (id) => {
     }
 }
 
-getPerson(1);
-getPerson(2);
-getPerson(3);
-getPerson(4);
-getPerson(5);
+
