@@ -1,22 +1,22 @@
-// fetch('https://swapi.dev/api/people/1')
-//     .then((res) => {
-//         console.log('RESOLVE!!!', res);
-//         return res.json()
-//     })
-//     .then((data) => {
-//         console.log('JSONデータ', data);
-//         return fetch('https://swapi.dev/api/people/2')
-//     })
-//     .then((res) => {
-//         console.log('RESOLVE2!!!', res);
-//         return res.json()
-//     })
-//     .then((data2) => {
-//         console.log('JSONデータ2', data2);
-//     })
-//     .catch((err) => {
-//         console.log('エラー!!!', err);
-//     })
+fetch('https://swapi.dev/api/people/1')
+    .then((res) => {
+        console.log('RESOLVE!!!', res);
+        return res.json()
+    })
+    .then((data) => {
+        console.log('JSONデータ', data);
+        return fetch('https://swapi.dev/api/people/2')
+    })
+    .then((res) => {
+        console.log('RESOLVE2!!!', res);
+        return res.json()
+    })
+    .then((data2) => {
+        console.log('JSONデータ2', data2);
+    })
+    .catch((err) => {
+        console.log('エラー!!!', err);
+    })
 
 
 const loadStarWarsPeople = async () => {
