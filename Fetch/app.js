@@ -60,3 +60,18 @@ console.log('リクエスト開始...');
     レスポンス受信:200
 */
 
+fetchPromise.then((response) => {
+    const jsonPromise = response.json();
+    jsonPromise.then((data) => {
+        console.log(data[0].name);
+    })
+})
+
+/* 
+プロミスの連鎖
+fetch()APIでは、Responseオブジェクトを取得したら、別の関数を呼び出してレスポンスデータを取得する必要がある
+レスポンスデータをJSONで、取得したいので、response.json()を呼び出す
+*/
+
+
+
