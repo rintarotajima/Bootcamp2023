@@ -93,7 +93,10 @@ Promiseチェーンを使うことによって、コールバック関数をネ�
 
 fetch("https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json") 
     .then((response) => response.json()) 
-    .then((data) => { console.log(data[0].name) })
+    .then((data) => console.log(data[0].name))
+    .catch((error) => {
+        console.error('Error',error);
+    })
 
 // 94行目から96行目までの意味
 // 94　fetch()関数を用いて、指定されたURLから非同期にJSONデータを取得するためで、Promiseを返す
@@ -102,6 +105,8 @@ fetch("https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-sto
 //    response.json()は、レスポンスの本文をJSON形式で読み取るPromiseを返す
 // 96 response.json()から返されたPromiseが解決した場合に、.thenに渡されたコールバック関数が呼び出される
 //    コールバック関数は、dataを引数として受け取り、dataの最初の要素のnameを出力する
+// 97,98 catch()は、Promiseチェーンの中で発生したエラーを処理するためのもの
+
 
 
 
