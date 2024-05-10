@@ -60,12 +60,12 @@ console.log('リクエスト開始...');
     レスポンス受信:200
 */
 
-fetchPromise.then((response) => {
-    const jsonPromise = response.json();
-    jsonPromise.then((data) => {
-        console.log(data[0].name);
-    })
-})
+// fetchPromise.then((response) => {
+//     const jsonPromise = response.json();
+//     jsonPromise.then((data) => {
+//         console.log(data[0].name);
+//     })
+// })
 
 /* 
 プロミスの連鎖
@@ -92,6 +92,11 @@ response.json()より返ってきたjsonデータの中身を取得するため�
 2. 指定した関数を呼び出す(コール)するから
 ようするに後にコールするからコールバックと言われている
 */
+
+/* 
+Promiseチェーンを使うことによって、コールバック関数をネストしないで記述できる(100行~)
+*/
+
 
 
 
