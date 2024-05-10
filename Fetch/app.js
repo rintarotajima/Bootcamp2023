@@ -36,6 +36,8 @@
 
 // loadStarWarsPeople();
 
+// const fetchPromise = fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
+// console.log(fetchPromise);
 
 // fetch()APIを呼び出し、その返り値をfetchPromiseへ代入している →fetch()を呼び出すとPromiseが返ってくる
 // fetchPromiseをログに出力する、Promsieオブジェクトがあり、Promise　{:pending}であり、読み取り処理が進行中であることを示す
@@ -46,6 +48,8 @@
 
 //then()メソッドにハンドラ関数を渡し、読み込みに成功するとプロミスはハンドラーが呼び出されて、サーバーのレスポンスが格納された
 //Responseオブジェクトが渡される
+
+// console.log('リクエスト開始...');
 
 
 /* 出力例 
@@ -69,7 +73,7 @@ fetch()APIでは、Responseオブジェクトを取得したら、別の関数�
 */
 
 /* 
-41行目と63~68行目のまとめ 
+39行目と61~66行目のまとめ 
 fetch()APIを呼び出して、Promiseオブジェクトが返ってくるため、それを定数に代入
 Promise.then()とすることで、Promise(非同期処理)が成功した後の処理を実行する→
 ここでは、サーバーからのレスポンスを受け取るためにResponseパラメータを引数として渡している
@@ -88,7 +92,7 @@ response.json()より返ってきたjsonデータの中身を取得するため�
 */
 
 /* 
-Promiseチェーンを使うことによって、コールバック関数をネストしないで記述できる(100行~)
+Promiseチェーンを使うことによって、コールバック関数をネストしないで記述できる(98行~)
 */
 
 fetch("https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json") 
@@ -98,14 +102,14 @@ fetch("https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-sto
         console.error('Error',error);
     })
 
-// 94行目から96行目までの意味
-// 94　fetch()関数を用いて、指定されたURLから非同期にJSONデータを取得するためで、Promiseを返す
-// 95 返されたPromiseが解決された場合、thenに渡されたコールバック関数が呼び出される
+// 98行目から103行目までの意味
+// 98　fetch()関数を用いて、指定されたURLから非同期にJSONデータを取得するためで、Promiseを返す
+// 99 返されたPromiseが解決された場合、thenに渡されたコールバック関数が呼び出される
 //    コールバック関数は,responseを引数として受け取り、response.json()を実行する 
 //    response.json()は、レスポンスの本文をJSON形式で読み取るPromiseを返す
-// 96 response.json()から返されたPromiseが解決した場合に、.thenに渡されたコールバック関数が呼び出される
+// 100 response.json()から返されたPromiseが解決した場合に、.thenに渡されたコールバック関数が呼び出される
 //    コールバック関数は、dataを引数として受け取り、dataの最初の要素のnameを出力する
-// 97,98 catch()は、Promiseチェーンの中で発生したエラーを処理するためのもの
+// 101 catch()は、Promiseチェーンの中で発生したエラーを処理するためのもの
 
 
 
