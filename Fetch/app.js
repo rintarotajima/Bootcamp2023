@@ -44,9 +44,9 @@ console.log(fetchPromise);
 // fetch()APIを呼び出し、その返り値をfetchPromiseへ代入している →fetch()を呼び出すとPromiseが返ってくる
 // fetchPromiseをログに出力する、Promsieオブジェクトがあり、Promise　{:pending}であり、読み取り処理が進行中であることを示す
 
-fetchPromise.then((response) => {
-    console.log(`レスポンスを受信:${response.status}`);
-})
+// fetchPromise.then((response) => {
+//     console.log(`レスポンスを受信:${response.status}`);
+// })
 
 //then()メソッドにハンドラ関数を渡し、読み込みに成功するとプロミスはハンドラーが呼び出されて、サーバーのレスポンスが格納された
 //Responseオブジェクトが渡される
