@@ -95,12 +95,12 @@ response.json()より返ってきたjsonデータの中身を取得するため�
 Promiseチェーンを使うことによって、コールバック関数をネストしないで記述できる(98行~)
 */
 
-fetch("https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json") 
-    .then((response) => response.json()) 
-    .then((data) => console.log(data[0].name))
-    .catch((error) => {
-        console.error('Error',error);
-    })
+// fetch("https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json") 
+//     .then((response) => response.json()) 
+//     .then((data) => console.log(data[0].name))
+//     .catch((error) => {
+//         console.error('Error',error);
+//     })
 
 // 98行目から103行目までの意味
 // 98　fetch()関数を用いて、指定されたURLから非同期にJSONデータを取得するためで、Promiseを返す
