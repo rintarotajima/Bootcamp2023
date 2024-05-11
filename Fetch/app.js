@@ -141,23 +141,96 @@ Promiseチェーンを使うことによって、コールバック関数をネ�
 // ここで、並行処理を実行する場合でも、その処理が同期的な処理を含んでいるとき、次にようにする
 
 setTimeout(() => {
-    console.log('自分；掃除が完了しました'); 
+    console.log('自分；掃除が完了しました');
 }, 10000)
 
 
-setTimeout(() => {
-    console.log('妹：肉を切りました');
-    setTimeout(() => {
-        console.log('兄；肉を炒めました');
-        setTimeout(() => {
-            console.log('妹：肉に塩を振りました');
-            setTimeout(() => {
-                console.log('兄：肉をお皿に盛りました');
-            }, 2000);
-        }, 1000)
-    }, 3000)
-    
-}, 4000)
+// setTimeout(() => {
+//     console.log('妹：肉を切りました');
+//     setTimeout(() => {
+//         console.log('兄；肉を炒めました');
+//         setTimeout(() => {
+//             console.log('妹：肉に塩を振りました');
+//             setTimeout(() => {
+//                 console.log('兄：肉をお皿に盛りました');
+//             }, 2000);
+//         }, 1000)
+//     }, 3000)
+
+// }, 4000)
 
 // これで、家事の掃除、料理タスクが並行処理されて、料理タスクの処理は、順番に処理される 
 // 出力順：妹：肉を切りました　→　兄：肉を炒めました　→　妹：肉に塩を振りました　→　自分；掃除が完了しました　→　兄：肉をお皿に盛りました
+// コールバック地獄になってしまう→コードの可読性が落ちる
+
+// Promise「約束する」→後で結果を返す”約束”を守るオブジェクト
+// 宝くじのようなもので, 当たりかはずれかは即座にはわからないが、一定時間経過すると結果を返す約束をしている
+// Promiseも同様で、Promiseオブジェクト生成後に、引数に指定した処理が成功（resolve）したか失敗（reject）したかを返す約束をしている
+// さらに、.then()を用いて、処理が成功(resolve)した後の処理を、.catch()を用いて、処理が失敗(reject)した後の処理を指定できる
+// 基本的な構文
+// const promiseobj = new Promise((resolve, reject) => {
+//     //何らかの処理
+//     resolve('処理は成功しました');
+//     reject('処理に失敗しました');
+// }).then((resolveMessage) => {
+//     console.log(resolveMessage);
+// }).catch((rejectMessage) => {
+//     console.log(rejectMessage);
+// })
+
+
+// const promisesetTimeout = new Promise((resolve) => {
+//     setTimeout(() => {
+//         console.log('妹：肉を切りました');
+//         resolve();
+//     }, 4000)
+// })
+// .then(() => {
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             console.log('兄：肉を炒めました');
+//             resolve();
+//         }, 3000)
+//     })
+// })
+// .then(() => {
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             console.log('妹：肉に塩を振りました');
+//             resolve();
+//         }, 1000)
+//     })
+// })
+// .then(() => {
+//     setTimeout(() => {
+//         console.log('兄：肉をお皿に盛りました');
+//     }, 2000)
+// })
+
+const cook = (message, time) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            console.log(message);
+            resolve()
+        }, time)
+    })
+}
+
+// cook('妹：肉を切りました', 4000)
+// .then(() => cook('兄；肉を炒めました', 3000))
+// .then(() => cook('妹；肉に塩を振りました', 1000))
+// .then(() => cook('兄：肉をお皿に盛りました', 2000))
+
+// thenを何回もつなげて書くこともできればしたくない→async、awaitの使用
+
+async function executeCooking() {
+    await cook('妹：肉を切りました', 4000)
+    await cook('兄：肉を炒めました', 3000)
+    await cook('妹：肉に塩を振りました', 1000)
+    await cook('兄；肉をお皿に盛りました', 2000)
+}
+
+executeCooking();
+
+
+
