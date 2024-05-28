@@ -1,5 +1,5 @@
 class Color {
-    constructor(r,g,b) {
+    constructor(r, g, b) {
         this.r = r;
         this.g = g;
         this.b = b;
@@ -14,6 +14,7 @@ class Color {
     }
 
 }
+
 
 const red = new Color(255,0,0);
 console.log(red.toString());
@@ -45,4 +46,32 @@ console.log(blue.toHex());
 1. 構造化；オブジェクトの構造を明確に定義でき、コードの可読性が向上する
 2. 継承：クラスを継承することで、新しいクラスを簡単に作成できる
 3. カプセル化：クラス内で、データとメソッドをカプセル化し、外部からの直接アクセスを制御する
+*/
+
+class NamedColor extends Color {
+    constructor(r,g,b,name) {
+        super(r,g,b);
+        this.name = name;
+    }
+    
+    toString() {
+        return `${this.name} (${super.toString()})`
+    }
+}
+
+const tomato = new NamedColor(255, 70, 91, "Tomato")
+console.log(tomato.toString());
+console.log(tomato.toHex());
+
+/* 
+クラスの継承:クラスを継承して新しいクラスを作成することができる。
+`Color`クラスを継承して`NamedColor`クラスを作成している。
+
+1. extendsキーワード
+・`Color`クラスを継承する新しい`NamedColor`クラスを定義する
+2. superキーワード
+・constructorメソッド内で、親クラスの`constructor`を呼び出し、親クラスのプロパティを初期化する
+・super.toString()を使って、親クラスの`toString`メソッドを呼び出す
+3. 追加プロパティ
+`NamedColr`クラスに、新しいプロパティ`name`を追加
 */
