@@ -16,15 +16,15 @@ class Color {
 }
 
 
-const red = new Color(255,0,0);
+const red = new Color(255, 0, 0);
 console.log(red.toString());
 console.log(red.toHex());
 
-const green = new Color(0,255,0);
+const green = new Color(0, 255, 0);
 console.log(green.toString());
 console.log(green.toHex());
 
-const blue = new Color(0,0,255);
+const blue = new Color(0, 0, 255);
 console.log(blue.toString());
 console.log(blue.toHex());
 
@@ -49,11 +49,11 @@ console.log(blue.toHex());
 */
 
 class NamedColor extends Color {
-    constructor(r,g,b,name) {
-        super(r,g,b);
+    constructor(r, g, b, name) {
+        super(r, g, b);
         this.name = name;
     }
-    
+
     toString() {
         return `${this.name} (${super.toString()})`
     }
@@ -75,3 +75,30 @@ console.log(tomato.toHex());
 3. 追加プロパティ
 `NamedColr`クラスに、新しいプロパティ`name`を追加
 */
+
+/*
+クラスの定義
+
+クラス Person を定義し、名前と年齢をプロパティとして持たせ、これらを設定するコンストラクタを作成してください。
+メソッドの追加
+
+Person クラスに、introduce というメソッドを追加してください。このメソッドは、名前と年齢を紹介するメッセージを返すようにしてください。
+クラスのインスタンス化
+
+Person クラスのインスタンスを作成し、名前に "Alice"、年齢に 30 を設定してください。その後、introduce メソッドを呼び出し、その結果をコンソールに出力してください。
+*/
+
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    introduce() {
+        return `I'm ${this.name} and ${this.age}`;
+    }
+
+}
+
+const person1 = new Person('Alice', 30);
+console.log(person1.introduce());
