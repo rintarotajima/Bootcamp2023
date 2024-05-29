@@ -98,7 +98,36 @@ class Person {
         return `I'm ${this.name} and ${this.age}`;
     }
 
+    static isAdult(age) {
+        return age >= 18;
+    }
+
 }
 
 const person1 = new Person('Alice', 30);
 console.log(person1.introduce());
+console.log(Person.isAdult(20));
+console.log(Person.isAdult(15));
+
+/*
+継承
+Person クラスを継承した Student クラスを作成してください。
+Student クラスには、追加で学年 (grade) プロパティを持たせ、introduce メソッドをオーバーライドして学年も紹介するようにしてください。
+
+Person クラスに静的メソッド isAdult を追加してください。
+このメソッドは、年齢が 18 以上であれば true を返し、それ以外の場合は false を返すようにしてください。
+*/
+
+class Student extends Person {
+    constructor(name, age, grade) {
+        super(name, age);
+        this.grade = grade;
+    }
+
+    introduce() {
+        return `I'm ${this.name} and ${this.age} and my grade is ${this.grade}`;
+    }
+}
+
+const student1 = new Student('Bob', 20, 'sophomore');
+console.log(student1.introduce());
