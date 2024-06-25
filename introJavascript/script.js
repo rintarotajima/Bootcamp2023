@@ -1,59 +1,40 @@
-// console.log("Javascriptの世界へようこそ");
-// console.log("Javascriptの冒険へ行くぞ");
 
-// const age = 25;
 
-// if (age < 5) {
-//     console.log("無料で映画をご覧になれます");
-// } else if (age < 12) {
-//     console.log("500円で映画をご覧になれます");
-// } else if (age < 15) {
-//     console.log("700円で映画をご覧になれます");
-// } else {
-//     console.log("あなたは年齢制限によって映画をご覧になれません");
-// }
+/* if文 ()の中の条件式が真のとき{}内の処理が実行される。*/
+const num = 102;
 
-// const dayOfWeek = prompt("曜日を英語で入力してください").toLowerCase();
+if (num <= 100) {
+    if (num >= 50) {
+        console.log("ほげ");
+    }
+} else {
+    if (num < 103) {
+        if (num % 2 === 0) {
+            console.log("正解!");
+        }
+    }
+}
 
-// if (dayOfWeek === 'monday') {
-//     console.log("今日はプロ野球の試合がない");
-// } else {
-//     console.log("今日はプロ野球の試合がある");
-// }
+const playerScore = 120;
+const playTime = 60;
+const levelCleared = true;
 
-// const num = 102;
+/* &&: 論理積演算子 すべてのオペランドがtrueのときに、trueを返す。  */
+if (playerScore >= 100 && playTime >= 60 && levelCleared) {
+    console.log("特別なアイテムを獲得しました");
+} else {
+    console.log("条件を満たしていません");
+}
 
-// if (num <= 100) {
-//     if (num >= 50) {
-//         console.log("ほげ");
-//     }
-// } else {
-//     if (num < 103) {
-//         if (num % 2 === 0) {
-//             console.log("正解!");
-//         }
-//     }
-// }
+const playedScore = 80;
+const playingTime = 30;
+const levelClear = false;
 
-// const playerScore = 120;
-// const playTime = 60;
-// const levelCleared = true;
-
-// if (playerScore >= 100 && playTime >= 60 && levelCleared) {
-//     console.log("特別なアイテムを獲得しました");
-// } else {
-//     console.log("条件を満たしていません");
-// }
-
-// const playedScore = 80;
-// const playingTime = 30;
-// const levelClear = false;
-
-// if (playedScore >= 100 || playingTime <= 60 || levelClear) {
-//     console.log("特別なアイテムを獲得しました");
-// } else {
-//     console.log("条件を満たしていません");
-// }
+if (playedScore >= 100 || playingTime <= 60 || levelClear) {
+    console.log("特別なアイテムを獲得しました");
+} else {
+    console.log("条件を満たしていません");
+}
 
 // // ユーザの年齢と住所
 // const userAge = 17;
