@@ -4,15 +4,15 @@
 const num = 102;
 
 if (num <= 100) {
-    if (num >= 50) {
-        console.log("ほげ");
-    }
+  if (num >= 50) {
+    console.log("ほげ");
+  }
 } else {
-    if (num < 103) {
-        if (num % 2 === 0) {
-            console.log("正解!");
-        }
+  if (num < 103) {
+    if (num % 2 === 0) {
+      console.log("正解!");
     }
+  }
 }
 
 const playerScore = 120;
@@ -21,51 +21,55 @@ const levelCleared = true;
 
 /* &&: 論理積演算子 すべてのオペランドがtrueのときに、trueを返す。  */
 if (playerScore >= 100 && playTime >= 60 && levelCleared) {
-    console.log("特別なアイテムを獲得しました");
+  console.log("特別なアイテムを獲得しました");
 } else {
-    console.log("条件を満たしていません");
+  console.log("条件を満たしていません");
 }
 
 const playedScore = 80;
 const playingTime = 30;
 const levelClear = false;
 
+/* ||: 論理和演算子　オペラントが1つ以上trueのときに、trueを返す。*/
 if (playedScore >= 100 || playingTime <= 60 || levelClear) {
-    console.log("特別なアイテムを獲得しました");
+  console.log("特別なアイテムを獲得しました");
 } else {
-    console.log("条件を満たしていません");
+  console.log("条件を満たしていません");
 }
 
-// // ユーザの年齢と住所
-// const userAge = 17;
-// const userCountry = "Japan";
 
-// if (!(userAge >= 18 && userCountry === "Japan")) {
-//     console.log("特定のメッセージを表示します");
-// } else {
-//     console.log("条件を満たしていません");
-// }
+const userAge = 17;
+const userCountry = "Japan";
+/* !:論理否定　真値を取ると、偽値になり、偽値を取ると、真値になる。*/
+if (!(userAge >= 18 && userCountry === "Japan")) {
+  console.log("特定のメッセージを表示します");
+} else {
+  console.log("条件を満たしていません");
+}
 
 
-//　ユーザからの入力を取得
-// let userInput = prompt("1から4の数字を入力してください");
-
-// switch(userInput) {
-//     case "1":
-//         alert("あなたは1を選択しました");
-//         break;
-//     case "2":
-//         alert("あなたは2を選択しました");
-//         break;
-//     case "3":
-//         alert("あなたは3を選択しました");
-//         break;
-//     case "4":
-//         alert("あなたは4を選択しました");
-//         break;
-//     default:
-//         alert("無効な数字です，1から4の数字を入力してください");
-// }
+/* ユーザからの入力を取得 */
+let userInput = prompt("1から4の数字を入力してください");
+/* switch 
+switch 文は式を評価して、一連の case 節に対してその式の値を照合し、最初に値が一致した case 節の後の文を、break 文に出会うまで実行します。
+一致した case の後にある文も同様に実行します。switch 文の default 節には、 case が式の値と一致しない場合にジャンプします。
+*/
+switch (userInput) {
+  case "1":
+    alert("あなたは1を選択しました");
+    break;
+  case "2":
+    alert("あなたは2を選択しました");
+    break;
+  case "3":
+    alert("あなたは3を選択しました");
+    break;
+  case "4":
+    alert("あなたは4を選択しました");
+    break;
+  default:
+    alert("無効な数字です。1から4の数字を入力してください");
+}
 
 // for (i = 1; i <= 10; i = i + 1) {
 //     console.log(i);
@@ -461,10 +465,10 @@ const prices = [1220, 2440, 3660, 4880, 5000];
 // }
 // console.log(total);
 
-prices.reduce( (total, price) => total += price )
+prices.reduce((total, price) => total += price)
 
 // 配列の要素の最小値を当てるコード
-const minPrices = prices.reduce( (min, price) => {
+const minPrices = prices.reduce((min, price) => {
   if (min > price) {
     return price; // minに入った値がpriceに入った値より大きい場合，最小値はpriceになるから
   }
@@ -476,11 +480,11 @@ const minPrices = prices.reduce( (min, price) => {
 // デフォルトパラメータ（関数の引数に初期を設定でき，引数が渡されなかった場合でもデフォルト値を使って実行できる)
 // 構文 funciton 関数名(引数1 = デフォルト値1, 引数2 = デフォルト値2, ...) { // 関数の処理}
 
-function mymultiply(a,b=1) {
+function mymultiply(a, b = 1) {
   return a * b;
 }
 
-console.log(mymultiply(5,3)); //15
+console.log(mymultiply(5, 3)); //15
 console.log(mymultiply(5)); //5
 
 // この例では，mymultiply関数の第2引数bにデフォルト値1を設定し，
@@ -569,7 +573,7 @@ console.log(b); // 2
 console.log(c); // 3
 
 // オブジェクトの分割代入：オブジェクトからプロパティの値を個別の変数に代入できる
-const object = { A:1, B:2, C:3}
+const object = { A: 1, B: 2, C: 3 }
 const { A, B } = object;
 console.log(A); //1
 console.log(B); //2 
@@ -587,10 +591,10 @@ console.log(B); //2
 // displayPersonInfo(jun);
 
 // 分割代入を使った関数
-function displayPersonInfo( {name , age}) {
+function displayPersonInfo({ name, age }) {
   console.log(`Name: ${name}, Age: ${age}`);
 }
-const jun = { name: 'Jun', age: 25}
+const jun = { name: 'Jun', age: 25 }
 displayPersonInfo(jun);
 
 /* 
