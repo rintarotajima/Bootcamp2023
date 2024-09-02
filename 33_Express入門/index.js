@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
 
-app.use(() => {
-    console.log("リクエストを受け取りました。");
+app.use((req, res) => {
+    // console.log("リクエストを受け取りました。");
+    res.send('<p>段落です</p>');
 })
 
 app.listen(8080, () => {
