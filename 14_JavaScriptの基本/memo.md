@@ -61,8 +61,14 @@ score *= 2;
 score /= 2;     
 ```
 
+### constとvar
+constは再代入できない。
+``` JavaScript
+const score = 5;
+score = 20; // エラー
+```
 
-
+varは昔に使われていた。
 
 
 
