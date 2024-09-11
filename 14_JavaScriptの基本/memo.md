@@ -84,6 +84,25 @@ isLoggedIn = "test"; // string
 // booleanからstringに変更している。
 ```
 
+### 変数の命名規則
+数字から始めることはできない。
+``` JavaScript
+let 1user = "user1"; // エラー
+let user1 = "user1"; // 正常
+```
+キャメルケースを使うことが多い。
+``` JavaScript
+let userName = "Mike"; // キャメルケース
+let UserName = "Trout"; // スネークケース
+```
+わかりやすい変数名を付けるのが大事。
+``` JavaScript
+let isLoggedIn = true;
+let haveMoney = false;
+```
+
+
+
 
 
 
