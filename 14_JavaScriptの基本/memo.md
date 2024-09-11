@@ -30,6 +30,35 @@ NaN(Not a Number)は数値ではないことを表すNumber型の値。
 ### 基本的な書き方
 let 変数名 = 値;
 
+### 変数の更新(主にNumber)
+``` JavaScript
+let score = 5; // undefined
+score = 10; // 10
+// scoreの値を10に更新したが、もっと楽に更新できる
+
+// scoreが5ずつ増えていく
+score = score + 5; // 15
+score += 5; // 20 こっちの書き方が一般的。
+
+// scoreが5ずつ減っていく
+score = score - 5; // 15
+score -= 5; // 10 こっちの書き方が一般的。
+
+// scoreが1ずつ増えていく
+score += 1;
+score++; // こっちの書き方が一般的。
+
+// scoreが1ずつ減っていく
+score -= 1;
+score--; // こっちの書き方が一般的。
+
+// scoreが2倍になっていく
+score *= 2;
+
+// scoreが2分の1になっていく
+score /= 2;     
+```
+
 
 
 
