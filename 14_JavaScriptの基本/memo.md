@@ -71,6 +71,26 @@ score = 20; // エラー
 varは昔に使われていた。
 
 
+### boolean
+trueかfalseの2つの値しかない。
+
+#### 変数のデータ型
+JSでは、変数のデータ型を変更できる。
+プログラミング言語によって、変数のデータ型を変更できるかどうかが異なる。
+
+``` JavaScript
+let isLoggedIn = true; // boolean
+isLoggedIn = "test"; // string
+// booleanからstringに変更している。
+```
+
+
+
+
+
+
+
+
 
 
 
