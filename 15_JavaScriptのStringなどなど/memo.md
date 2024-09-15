@@ -57,6 +57,18 @@ const whisper = message.trim().toLowerCase();
 // "taste the rainbow"
 ```
 
+## Stringメソッドに引数を渡す
+Stringのメソッドに引数を渡すことで、動作する操作も存在する。
+
+例題
+``` JavaScript
+// wordの値をbeardに変更する。
+const word = 'skateboard'
+// Stringのslice()とreplace()を使う。
+const facialHair = word.slice(5).replace("o", "e")
+// beard
+```
+
 
 
 
