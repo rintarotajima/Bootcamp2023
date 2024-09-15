@@ -78,6 +78,11 @@ const price = 500;
 const total = `抹茶アイス${pieces}個の値段は${price}円です`
 ```
 
+## undefinedとnull
+それぞれJSのプリミティブ型。
+undefinedはわからないことを示す。
+nullは意図的に値が存在しないことを示す。
+
 
 
 
