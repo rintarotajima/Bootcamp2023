@@ -32,6 +32,16 @@ const userName = "Steve Jobs";
 console.log(userName.length); // 10
 console.log(userName[userName.length - 1]); // s インデックスは0から始まるので、最後の文字を取得するには、length - 1 する。
 ```
+### 文字列の連結
+JSでは、文字列を連結をすることができる。
+``` JavaScript
+const firstName = "Shohei";
+const lastName = "Ohtani";
+const fullName = fisrtName + "" + lastName;
+console.log(fullName); // 'Shohei Ohtani'
+```
+
+
 
 
 
