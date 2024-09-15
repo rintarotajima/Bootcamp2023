@@ -68,6 +68,15 @@ const word = 'skateboard'
 const facialHair = word.slice(5).replace("o", "e")
 // beard
 ```
+## 便利なテンプレートリテラル
+テンプレートリテラルを使うと、変数や式を文字列内で使えるようになり、+などの記号を減らすことができる。
+例題：抹茶アイス3個の値段は500円です。
+``` JavaScript
+const product = "抹茶アイス" + 3 + "個の値段は" + 500 +"円です。"
+const pieces = 3;
+const price = 500;
+const total = `抹茶アイス${pieces}個の値段は${price}円です`
+```
 
 
 
