@@ -41,7 +41,21 @@ const fullName = fisrtName + "" + lastName;
 console.log(fullName); // 'Shohei Ohtani'
 ```
 
+## Stringのメソッド
+文字列にはあらかじめ、組み込まれたメソッドがあり、特定の操作ができる。
 
+``` JavaScript　
+things.method(); // ()をつける
+```
+
+### 例題
+messageという変数があり、その値を返ることなく、小文字に変換したものをwhisperという変数に入れ、両端の空白を取り除いてください。
+
+``` JavaScript
+const message = "  TASTE THE RAINBOW  "
+const whisper = message.trim().toLowerCase();
+// "taste the rainbow"
+```
 
 
 
